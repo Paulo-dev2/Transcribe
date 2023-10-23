@@ -1,4 +1,4 @@
-import { ControllerError } from "@/presentation/errors/controller-error"
+import { ControllerError } from "./controller-error"
 
 export class ShorterLengthError extends Error implements ControllerError {
   constructor (lenParams: number) {

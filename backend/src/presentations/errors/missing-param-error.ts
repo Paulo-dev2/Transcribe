@@ -1,4 +1,4 @@
-import { ControllerError } from "@/presentation/errors/controller-error"
+import { ControllerError } from "./controller-error"
 
 export class MissingParamError extends Error implements ControllerError {
   constructor (paramName: string) {

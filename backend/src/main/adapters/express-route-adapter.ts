@@ -1,13 +1,12 @@
 import { Request, Response } from 'express';
-import { HttpRequest } from '@/presentation/ports/http';
+import { HttpRequest } from '../../presentations/ports/http';
  
 export class adaptRoute {
   static create (controller: any){
       return async (req: Request, res: Response) => {
         const httpRequest: HttpRequest = {
-          body: req.body,
+          body: req.body.data,
           params: req.params,
-          files: req.file || req.files
         }
 
         const httpResponse = await controller.handle(httpRequest);

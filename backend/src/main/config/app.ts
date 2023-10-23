@@ -14,8 +14,8 @@ export class App{
     public http: any = http;
     constructor() {
         this.server = express();
-        this.http = this.http.createServer(this.server);
-        this.socket(this.http);
+        //this.http = this.http.createServer(this.server);
+        //this.socket(this.http);
         this.middleware();
         this.database();
         this.routes();

@@ -23,6 +23,7 @@
     "fluent-ffmpeg": "^2.1.2",
     "socket.io": "^4.7.2",
     "typescript": "^5.2.2",
+    "uuid": "^9.0.1",
     "youtube-mp3-downloader": "^0.7.11",
     "ytdl-core": "^4.11.5"
   },
