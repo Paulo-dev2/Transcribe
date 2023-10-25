@@ -1,7 +1,7 @@
 ﻿# AtividadeTranscribe
 # Grupo:
-  André
-  Andrei
-  Artur
-  Lucca
-  Paulo Abdiel
+  #André
+  #Andrei
+  #Artur
+  #Lucca
+  #Paulo Abdiel
