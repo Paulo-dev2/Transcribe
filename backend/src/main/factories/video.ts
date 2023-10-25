@@ -1,6 +1,5 @@
 import { VideoDownloader } from "../../external/download/VideoDownloader";
 import { VideoRepository } from "../../external/repositories/VideoRepository";
-import { Tanscribe } from "../../external/transcribe";
 import { VideoTranscriber } from "../../external/transcribe/VideoTranscribe";
 import { DownloadVideoController } from "../../presentations/controllers/DownloadVideo";
 import { DownloadVideo } from "../../usecases/download-video/download-video";

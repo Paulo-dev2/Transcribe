@@ -196,9 +196,9 @@ export const ContentContainer = styled.div`
 `;
 
 export const ChunkContainer = styled.div`
-  display: flex;
-  align-items: flex-start;
-  gap: 0.75rem;
+display: flex;
+flex-direction: column;
+gap: 0.75rem;
 `;
 
 export const TimeContainer = styled.time`

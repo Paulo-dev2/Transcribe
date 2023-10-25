@@ -3,7 +3,6 @@ import { InvalidUrl } from "../../entities/validations/erros/invalid-url";
 import { Register } from "../../entities/video/downloadVideo";
 import { VideoDownloader } from "../../external/download/VideoDownloader";
 import { VideoRepository } from "../../external/repositories/VideoRepository";
-import { Tanscribe } from "../../external/transcribe";
 import { VideoTranscriber } from "../../external/transcribe/VideoTranscribe";
 import { Either, left } from "../../shared/either";
 import { DownloadVideoResponse } from "./download-video-response";

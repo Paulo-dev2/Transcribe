@@ -18,6 +18,7 @@ export class VideoTranscriber {
         const options = {
             punctuate: true,
             utterances: true,
+            detect_language: true,
         };
         const result = await this.deepgram.transcription
             .preRecorded(file, options)
