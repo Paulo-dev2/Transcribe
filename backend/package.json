@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "tsnd --respawn --ignore-watch node_modules src/main/server.ts"
+    "dev": "tsnd --respawn --ignore-watch node_modules src/infra/main/server.ts"
   },
   "repository": {
     "type": "git",
