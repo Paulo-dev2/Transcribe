@@ -2,7 +2,7 @@ import { IDownloadVideo } from ".";
 import { InvalidUrl } from "../../../domain/entities/validations/erros/invalid-url";
 import { Register } from "../../../domain/entities/video/downloadVideo";
 import { VideoDownloader } from "../../../infra/download/VideoDownloader";
-import { VideoRepository } from "../../../domain/repositories/VideoRepository";
+import { VideoRepository } from "../../repositories/in-memory/VideoRepository";
 import { VideoTranscriber } from "../../../infra/transcribe/VideoTranscribe";
 import { Either, left } from "../../../shared/either";
 import { DownloadVideoResponse } from "./download-video-response";
@@ -26,11 +26,16 @@ export class DownloadVideo implements IDownloadVideo{
         if(videoOrError.isLeft()) return left(videoOrError.value);
         const video: Register = videoOrError.value;
 
+        const existsUrl: any = await this.videoRepository.findByUrl(video)
+
+        if(existsUrl) return existsUrl
+        
         const videoFileName = await this.downloaderVideo.download(video)
         const transcript: any = await this.transcribeVideo.transcribe(videoFileName);
 
+        const response: any = await this.videoRepository.create(video, transcript);
         //const response: any = await this.videoRepository.createTranscribe(videoFileName, transcript)
 
-        return transcript;
+        return response;
     }
 }

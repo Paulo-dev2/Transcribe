@@ -13,8 +13,8 @@ export const useVideo = () => {
 
     try {
       const { data } = await api.post('/video/create-video', { data: url });
-      if (data.notification) {
-        setTranscript(data.notification);
+      if (data.transcript) {
+        setTranscript(data.transcript);
         setSuccess(true);
       }
     } catch (err) {

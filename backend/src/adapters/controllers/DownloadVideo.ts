@@ -16,6 +16,6 @@ export class DownloadVideoController{
         const {url} = httpRequest.body;
         const videoData = url;
         const response = await this.downloadVideo.downloadVideo(videoData);
-        return ok({notification:response});
+        return ok(response);
     }
 }

@@ -1,5 +1,5 @@
 import { DownloadVideoController } from "../../../adapters/controllers/DownloadVideo";
-import { VideoRepository } from "../../../domain/repositories/VideoRepository";
+import { VideoRepository } from "../../../domain/repositories/in-memory/VideoRepository";
 import { DownloadVideo } from "../../../domain/usecases/download-video/download-video";
 import { VideoDownloader } from "../../download/VideoDownloader";
 import { VideoTranscriber } from "../../transcribe/VideoTranscribe";
