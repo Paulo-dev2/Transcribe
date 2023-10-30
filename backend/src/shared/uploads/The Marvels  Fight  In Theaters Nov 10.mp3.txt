@@ -2,8 +2,8 @@ WEBVTT
 
 NOTE
 Transcription provided by Deepgram
-Request Id: 8587c69b-b6d6-4387-9dab-9f05a83c5ebd
-Created: 2023-10-27T19:58:05.765Z
+Request Id: 5c154e29-1217-4fc5-9e7e-2324c61c86fd
+Created: 2023-10-30T01:06:11.884Z
 Duration: 30.093063
 Channels: 1
 
@@ -28,8 +28,8 @@ You cannot protect your people.
 00:00:24.470 --> 00:00:24.765
 Watch
 
-00:00:26.313 --> 00:00:29.330
-The marvel sweetie P experienced Ny tickets on
+00:00:26.313 --> 00:00:29.092
+The marvel sweetie P thirteen experienced Ny tickets
 
-00:00:29.330 --> 00:00:29.886
-until Tuesday.
+00:00:29.092 --> 00:00:29.886
+on until Tuesday.

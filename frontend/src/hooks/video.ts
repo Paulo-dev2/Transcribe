@@ -3,7 +3,7 @@ import { api } from '@/service/api';
 
 export const useVideo = () => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
-  const [transcript, setTranscript] = useState<string>("");
+  const [transcript, setTranscript] = useState<object>({});
   const [success, setSuccess] = useState<boolean>(false);
   const [error, setError] = useState<String | null>(null);
 

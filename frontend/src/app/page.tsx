@@ -9,7 +9,6 @@ export default function Home() {
 
   const { isLoading, transcript, success, error, createVideo } = useVideo();
   const [url, setUrl] = useState<string>("");
-  const [transcription, setTranscription] = useState<any>({});
 
   const handleChangeUrl = ({ value }: any) => setUrl(value);
 
@@ -34,49 +33,11 @@ export default function Home() {
     document.body.removeChild(a);
   }
 
-  const formatTranscribe = async (inputText: string) => {
-    const lines = inputText.split('\n');
-
-    // Inicialize o dicionário
-    const subtitles: any = {};
-
-    // Variáveis para rastrear tempo e texto
-    let currentTime = '';
-
-    // Analise as linhas
-    for (const line of lines) {
-      if (line.includes('-->')) {
-        // Esta linha contém informações de tempo
-        const [startTime, endTime] = line.split(' --> ');
-        currentTime = `${startTime} --> ${endTime}`;
-      } else if (line.trim() !== '' && currentTime) {
-        // Esta linha contém texto
-        if (!subtitles[currentTime]) {
-          subtitles[currentTime] = '';
-        }
-        subtitles[currentTime] += `${line} `;
-      }
-    }
-
-    // Remova espaços em branco no início e no final de cada texto
-    for (const key in subtitles) {
-      subtitles[key] = subtitles[key].trim();
-    }
-
-    await setTranscription(subtitles);
-  }
-
+  
   const urlIsValid = (url: string) => {
     const tester = /^(https?|ftp):\/\/[a-zA-Z0-9.-]+(\.[a-zA-Z]{2,})?(\/[^\s]*)?$/
     return tester.test(url)
   }
-
-
-  useEffect(() => {
-    if (transcript && success) {
-      formatTranscribe(transcript);
-    }
-  }, [transcript, success]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -85,7 +46,6 @@ export default function Home() {
         await createVideo({ url });
         console.log(transcript);
         if (success) {
-          await formatTranscribe(transcript)
           alert("Ação createVideo despachada com sucesso!");
         }
       } else {
@@ -104,7 +64,7 @@ export default function Home() {
           handleChangeUrl={handleChangeUrl}
           handleSubmit={handleSubmit}
           success={success}
-          transcription={transcription}
+          transcription={transcript}
           url={url}
           downloadTranscription={downloadTranscription} />
       </C.Loading>

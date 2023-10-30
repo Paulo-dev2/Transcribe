@@ -2,10 +2,8 @@
 import * as C from '@/styles/index'
 import VLibras from "vlibras-nextjs";
 import { BsDownload } from 'react-icons/bs';
-import { useState } from 'react';
 
 export const Main = ({ handleChangeUrl, handleSubmit, success, transcription, url, downloadTranscription }: any) => {
-    const [disabled, setDisabled] = useState(true)
     return (
         <>
             <C.GridContainer>
