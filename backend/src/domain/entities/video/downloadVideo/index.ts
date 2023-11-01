@@ -10,7 +10,6 @@ export class Register{
     }
 
     static register(urlData: string): Either<InvalidUrl, Register>{
-        console.log(urlData)
         const urlOrError: Either<InvalidUrl, Url> = Url.create(urlData);
 
         if(urlOrError.isLeft()) return left(urlOrError.value);

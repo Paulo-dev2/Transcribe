@@ -34,7 +34,6 @@ export class DownloadVideo implements IDownloadVideo{
         const transcript: any = await this.transcribeVideo.transcribe(videoFileName);
 
         const response: any = await this.videoRepository.create(video, transcript);
-        //const response: any = await this.videoRepository.createTranscribe(videoFileName, transcript)
 
         return response;
     }
