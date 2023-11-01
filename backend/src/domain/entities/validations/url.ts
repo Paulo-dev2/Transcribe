@@ -22,7 +22,7 @@ export class Url {
 
   static validate (url: string): boolean {
     const tester = /^(https?|ftp):\/\/[a-zA-Z0-9.-]+(\.[a-zA-Z]{2,})?(\/[^\s]*)?$/
-    if(!url) return false
+    if(!url || url == null || url == undefined) return false
     if(!tester.test(url)) return false
     return true
   }
