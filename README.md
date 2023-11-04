@@ -48,6 +48,8 @@
 
 # Referências
 
- - https://www.w3.org/Translations/WCAG20-pt-br/#:~:text=Todas%20estas%20camadas%20de%20orienta%C3%A7%C3%A3o%20%28princ%C3%ADpios%2C%20diretrizes%2C%20crit%C3%A9rios,orienta%C3%A7%C3%B5es%20sobre%20como%20tornar%20o%20conte%C3%BAdo%20mais%20acess%C3%ADvel. Acessado em 29/10/2023 18:12
- - https://neilpatel.com/br/blog/acessibilidade-na-web/ -> Acessado em 31/10/2023 18:31
- - https://www.gov.br/mdh/pt-br/navegue-por-temas/pessoa-com-deficiencia/estatisticas => Acessado em 04/11/2023 15:22
+- W3C (World Wide Web Consortium). Web Content Accessibility Guidelines (WCAG) 2.0. Disponível em: https://www.w3.org/Translations/WCAG20-pt-br/. Acessado em: 29 out. 2023, às 18:12.
+
+- Patel, Neil. Acessibilidade na Web. Disponível em: https://neilpatel.com/br/blog/acessibilidade-na-web/. Acessado em: 31 out. 2023, às 18:31.
+
+- Governo Federal. Ministério da Mulher, da Família e dos Direitos Humanos. Pessoa com Deficiência - Estatísticas. Disponível em: https://www.gov.br/mdh/pt-br/navegue-por-temas/pessoa-com-deficiencia/estatisticas. Acessado em: 4 nov. 2023, às 15:22.
