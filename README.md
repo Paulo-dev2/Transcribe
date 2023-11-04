@@ -1,10 +1,24 @@
 ﻿# AtividadeTranscribe
 # Grupo:
-  André
-  Andrei
-  Artur
-  Lucca
-  Paulo Abdiel
+   - André
+   - Andrei
+   - Artur
+   - Lucca
+   - Paulo Abdiel
+
+  A busca de acessibilidade na internet não é somente uma prática recomendada para websites, app e etc. Afinal a internet é para todos e existe uma quantidade enorme de usuários que podem ter diferentes necessidades e deficiências. Portanto, a acessibilidade na web é uma responsabilidade essencial para garantir que todos, independentemente de suas limitações, possam acessar e utilizar os recursos online. E existe alguns aspectos que os desenvolvedores precisa adaptar, como: marcação semântica, texto alternativo, contraste de cores, navegabilidade, legendas e audidescrição e muitos outros. Pois de acordo com o site do Governo Federal, existem 18,9 milhões de pessoas com deficiência na data 15/09/2023.
+
+  # Definições
+
+ - Marcação semântica: Utilizar marcações HTML adequadas e semânticas para garantir que o conteúdo seja interpretado corretamente por leitores de tela e outros dispositivos de assistência.
+
+ - Texto alternativo: Fornecer descrições adequadas para imagens e outros elementos visuais, permitindo que os usuários com deficiência visual entendam o conteúdo.
+
+ - Contraste de cores: Garantir que o texto e os elementos visuais tenham contraste suficiente para serem legíveis por pessoas com deficiências visuais.
+
+ - Navegabilidade: Tornar a navegação do site fácil e lógica, para que os usuários possam se deslocar efetivamente por meio de teclados, leitores de tela ou outros dispositivos.
+
+ - Legendas e audiodescrição: Incluir legendas em vídeos e fornecer audiodescrição para tornar o conteúdo de mídia acessível a pessoas surdas ou com deficiência visual.
 
 # Tornando a Internet Mais Acessível: A Importância da Legenda e do vLibras
 
@@ -31,3 +45,9 @@
  - Tornar a internet mais acessível é uma responsabilidade que deve ser compartilhada por todos. Os desenvolvedores de sites, criadores de conteúdo e empresas precisam adotar medidas que garantam que todos, independentemente de suas capacidades, possam desfrutar plenamente do conteúdo online. A integração de legendas e ferramentas como o vLibras é um passo crucial na direção certa.
 
  - Em resumo, a acessibilidade na internet é uma questão de igualdade e inclusão. Ao criar sites de transcrição de vídeo que incorporam legendas e o vLibras, estamos promovendo uma internet mais acolhedora, onde todos podem acessar informações e participar da comunicação online. É um passo fundamental para um mundo virtual mais inclusivo e diversificado.
+
+# Referências
+
+ - https://www.w3.org/Translations/WCAG20-pt-br/#:~:text=Todas%20estas%20camadas%20de%20orienta%C3%A7%C3%A3o%20%28princ%C3%ADpios%2C%20diretrizes%2C%20crit%C3%A9rios,orienta%C3%A7%C3%B5es%20sobre%20como%20tornar%20o%20conte%C3%BAdo%20mais%20acess%C3%ADvel. Acessado em 29/10/2023 18:12
+ - https://neilpatel.com/br/blog/acessibilidade-na-web/ -> Acessado em 31/10/2023 18:31
+ - https://www.gov.br/mdh/pt-br/navegue-por-temas/pessoa-com-deficiencia/estatisticas => Acessado em 04/11/2023 15:22
