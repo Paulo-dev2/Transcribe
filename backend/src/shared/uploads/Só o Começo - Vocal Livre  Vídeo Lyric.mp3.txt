@@ -1,0 +1,11 @@
+WEBVTT
+
+NOTE
+Transcription provided by Deepgram
+Request Id: 96172da6-674b-4840-aba5-9ce3b2da6c97
+Created: 2023-11-06T14:26:50.672Z
+Duration: 339.82693
+Channels: 1
+
+00:00:09.531 --> 00:00:09.985
+Do I

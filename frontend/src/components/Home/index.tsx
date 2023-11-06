@@ -2,15 +2,11 @@
 import * as C from '@/styles/index'
 import VLibras from "vlibras-nextjs";
 import { BsDownload } from 'react-icons/bs';
-import Image from 'next/image';
 
 export const Main = ({ handleChangeUrl, handleSubmit, success, transcription, url, downloadTranscription }: any) => {
     return (
         <>
             <C.GridContainer>
-                <C.LogoContainer>
-                    <Image src="/logo.svg" alt="Logo" width="250" height="250" />
-                </C.LogoContainer>
                 <C.FlexContainer>
                     <C.FormContainer>
                         <C.InputWrapper className="input-wrapper flex">

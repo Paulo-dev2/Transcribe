@@ -1,6 +1,39 @@
 import styled, {css} from 'styled-components';
 
+export const Menu = styled.ul`
+  position: fixed;
+  top: 0;
+  padding: calc(4.5rem + 5vh) 5rem 0;
+  width: 90%;
+  list-style-type: none;
+  margin: 0;
+  padding: 1rem;
+  overflow: hidden;
+  background-color: rgba(14, 10, 10, 1);
+  align-items: center;
+`;
+
+export const Item = styled.li`
+  float: right;
+  padding: 1rem;
+`;
+
+export const ItemLink = styled.a`
+  a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+
+  &:hover {
+    background-color: #111;
+  }
+`;
+
 export const AppContainer = styled.div`
+  margin-top: 4.5rem;
   padding: calc(4.5rem + 5vh) 5rem 0;
   width: 100%;
   height: 100vh;
