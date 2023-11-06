@@ -4,7 +4,6 @@ import * as C from '@/styles/index';
 import React from 'react';
 import Image from 'next/image';
 
-
 export const Header = ({children}: any) => {
     return (
         <C.AppContainer>
@@ -14,7 +13,7 @@ export const Header = ({children}: any) => {
                 </C.LogoContainer>
                 <C.Item>
                     <C.ItemLink href="/transcribes">
-                        Transcritos
+                        Transcrições
                     </C.ItemLink>
                 </C.Item>
                 <C.Item>

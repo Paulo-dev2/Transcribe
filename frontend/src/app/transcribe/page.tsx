@@ -1,6 +1,6 @@
 "use client";
 
-import { useVideo } from '@/hooks/video';
+import { useVideo } from '@/hooks/download-video';
 import * as C from '@/styles/index';
 import { Main } from '@/components/Home';
 import { useState } from 'react';

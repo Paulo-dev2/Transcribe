@@ -49,4 +49,8 @@ export class VideoRepository {
 
     return this.jsonData.find( record => record.url == url)
   }
+
+  public async findAll(): Promise<Array<VideoData>>{
+    return await this.jsonData
+  }
 }
