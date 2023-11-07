@@ -29,8 +29,9 @@ export class VideoTranscriber {
         if (result && (result as PrerecordedTranscriptionResponse).toWebVTT) {
             // Se for, acesse a propriedade toWebVTT
             const transcript = (result as PrerecordedTranscriptionResponse).toWebVTT();
-            this.transcriptFormated = await this.transcriptFormatedData(transcript)
-            await fs.writeFileSync(`${videoFile}.txt`, transcript);
+            this.transcriptFormated = await this.transcriptFormatedData(transcript);
+            fs.unlinkSync(videoFile)
+            //await fs.writeFileSync(`${videoFile}.txt`, transcript);
             return this.transcriptFormated;
         } else {
             console.log("Resultado inválido.");

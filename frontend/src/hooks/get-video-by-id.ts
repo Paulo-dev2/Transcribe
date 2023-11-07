@@ -3,17 +3,17 @@ import { api } from '@/service/api';
 
 export const useVideo = () => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
-  const [transcript, setTranscript] = useState<Array<object>>([]);
+  const [transcript, setTranscript] = useState<object>({});
   const [success, setSuccess] = useState<boolean>(false);
   const [error, setError] = useState<String | null>(null);
 
-  const getVideos = useCallback(async () => {
+  const getVideoById = useCallback(async (id: string) => {
     setIsLoading(true);
     setError(null);
 
     try {
-      const { data } = await api.get('/video/get-videos');
-      if (data.length > 0) {
+      const { data } = await api.get('/video/get-video/' + id);
+      if (data) {
         setSuccess(true);
         setTranscript(data);
       }
@@ -30,6 +30,6 @@ export const useVideo = () => {
     transcript,
     success,
     error,
-    getVideos,
+    getVideoById,
   };
 }

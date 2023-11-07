@@ -1,5 +1,5 @@
 import { Either, left, right } from '../../../shared/either';
-import { InvalidUrl } from './erros/invalid-url';
+import { InvalidUrlError } from './erros/invalid-url';
 
 export class Url {
   private readonly url: string
@@ -9,9 +9,9 @@ export class Url {
     Object.freeze(this)
   }
 
-  static create (url: string): Either<InvalidUrl, Url> {
+  static create (url: string): Either<InvalidUrlError, Url> {
     if (!Url.validate(url)) {
-      return left(new InvalidUrl(url))
+      return left(new InvalidUrlError(url))
     }
     return right(new Url(url))
   }

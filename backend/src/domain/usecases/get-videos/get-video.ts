@@ -12,7 +12,7 @@ export class GetVideos implements IGetVideos{
 
     async getVideos(): Promise<GetVideosResponse>{
 
-        const response = await this.videoRepository.findAll();
+        const response: any = await this.videoRepository.findAll();
 
         return response;
     }

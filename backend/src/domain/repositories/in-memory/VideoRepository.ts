@@ -37,7 +37,6 @@ export class VideoRepository {
       const jsonData = JSON.stringify(this.jsonData, null, 2);
       await fs.writeFile(this.filePath, jsonData, 'utf8');
     } catch (error) {
-      // Handle write errors
       console.error('Error writing to file:', error);
     }
 
@@ -50,7 +49,28 @@ export class VideoRepository {
     return this.jsonData.find( record => record.url == url)
   }
 
-  public async findAll(): Promise<Array<VideoData>>{
-    return await this.jsonData
+  public async findById(video: any){
+    const id: string = video.id;
+    return this.jsonData.find( record => record.id == id)
   }
+
+  public async findAll(): Promise<Array<VideoData>>{
+    return this.jsonData
+  }
+
+  public async deleteById(video: any): Promise<boolean> {
+    const id: string = video.id;
+    this.jsonData = this.jsonData.filter((record) => record.id !== id);
+  
+    try {
+      const jsonData = JSON.stringify(this.jsonData, null, 2);
+      await fs.writeFile(this.filePath, jsonData, 'utf8');
+      await this.loadData();
+      return true;
+    } catch (error) {
+      console.error('Erro ao escrever no arquivo:', error);
+      return false;
+    }
+  }
+  
 }

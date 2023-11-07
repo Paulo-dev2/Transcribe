@@ -1,5 +1,5 @@
 import { Either } from "../../../shared/either";
-import { InvalidUrl } from "../../../domain/entities/validations/erros/invalid-url";
+import { InvalidUrlError } from "../../../domain/entities/validations/erros/invalid-url";
 import { VideoData } from "../../../domain/entities/video/VideoData";
 
-export type DownloadVideoResponse = Either<InvalidUrl, VideoData>
+export type DownloadVideoResponse = Either<InvalidUrlError, VideoData>

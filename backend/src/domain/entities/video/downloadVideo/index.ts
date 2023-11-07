@@ -1,5 +1,5 @@
 import { Either, left, right } from "../../../../shared/either";
-import { InvalidUrl } from "../../validations/erros/invalid-url";
+import { InvalidUrlError } from "../../validations/erros/invalid-url";
 import { Url } from "../../validations/url";
 
 export class Register{
@@ -9,8 +9,8 @@ export class Register{
         Object.freeze(this);
     }
 
-    static register(urlData: string): Either<InvalidUrl, Register>{
-        const urlOrError: Either<InvalidUrl, Url> = Url.create(urlData);
+    static register(urlData: string): Either<InvalidUrlError, Register>{
+        const urlOrError: Either<InvalidUrlError, Url> = Url.create(urlData);
 
         if(urlOrError.isLeft()) return left(urlOrError.value);
 

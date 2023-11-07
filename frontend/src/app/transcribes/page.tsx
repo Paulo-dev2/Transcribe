@@ -2,11 +2,16 @@
 
 import * as C from '@/styles/index';
 import { useVideo } from "@/hooks/get-videos";
+import { useVideoDelete } from "@/hooks/delete-video-by-id";
 import { useEffect } from "react";
+import { Card } from '@/components/Card';
+
+import { useRouter } from 'next/navigation'
 
 export default function Transcribes() {
-    const {isLoading,transcript,success,error,getVideos} = useVideo();
-
+    const {isLoading,transcript,success,getVideos} = useVideo();
+    const {isDeleting, deletado, deleteVideoById} = useVideoDelete();
+    const router = useRouter(); 
     useEffect(() => {
         const getData = async () => {
             try {
@@ -14,11 +19,27 @@ export default function Transcribes() {
                 if(success)
                     alert("Sucesso")
             } catch (error) {
-
+                console.log(error)
             }
         }
         getData()
       }, [success]);
+
+    const onViewClick = (id: string) => {
+        router.push(`/transcribes/${id}`)
+    }
+
+    const onDeleteClick = async (id: string) => {
+        try {
+            await deleteVideoById({id});
+            if(deletado){
+                alert("Deletado com sucesso");
+                router.refresh();
+            }
+        } catch (error) {
+            console.log(error)
+        }
+    }
 
 
     return(
@@ -28,28 +49,13 @@ export default function Transcribes() {
                         {success && (
                             <>
                                 {transcript.map( (data: any, index: number) => (
-                                    <div>
-                                         <iframe
-                                            width="560"
-                                            height="315"
-                                            src={data.url.replace("watch?v=", "embed/")}
-                                            title="YouTube Video"
-                                            frameBorder="0"
-                                            allowFullScreen
-                                        ></iframe>
-                                        <>
-                                            {Object.entries(data).map(([time, text]: [string, any]) => (
-                                                <div key={index}>
-                                                    <C.TextContainer>
-                                                    {Object.values(text).map((line: any, lineIndex: any ) => (
-                                                        <span key={lineIndex}>{line}</span>
-                                                    ))}
-                                                    </C.TextContainer>
-                                                </div>
-                                            ))}
-
-                                        </>
-                                    </div>
+                                    <Card 
+                                        key={data.id}
+                                        id={data.id}
+                                        url={data.url}
+                                        onViewClick={onViewClick}
+                                        onDeleteClick={onDeleteClick}
+                                    />
                                 ))}
                             </>
                         )}

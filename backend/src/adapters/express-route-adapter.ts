@@ -9,7 +9,7 @@ export class adaptRoute {
           body: req.body.data,
           params: req.params,
         }
-
+        
         const httpResponse = await controller.handle(httpRequest);
 
         res.status(httpResponse.statusCode).json(httpResponse.body);

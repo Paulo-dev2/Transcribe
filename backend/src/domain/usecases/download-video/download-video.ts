@@ -1,5 +1,5 @@
 import { IDownloadVideo } from ".";
-import { InvalidUrl } from "../../../domain/entities/validations/erros/invalid-url";
+import { InvalidUrlError } from "../../../domain/entities/validations/erros/invalid-url";
 import { Register } from "../../../domain/entities/video/downloadVideo";
 import { VideoDownloader } from "../../../infra/download/VideoDownloader";
 import { VideoRepository } from "../../repositories/in-memory/VideoRepository";
@@ -22,7 +22,7 @@ export class DownloadVideo implements IDownloadVideo{
     }
 
     async downloadVideo(videoData: any): Promise<DownloadVideoResponse>{
-        const videoOrError: Either<InvalidUrl, Register> = Register.register(videoData);
+        const videoOrError: Either<InvalidUrlError, Register> = Register.register(videoData);
         if(videoOrError.isLeft()) return left(videoOrError.value);
         const video: Register = videoOrError.value;
 
