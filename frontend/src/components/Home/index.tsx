@@ -21,7 +21,7 @@ export const Main = ({ handleChangeUrl, handleSubmit, success, transcription, ur
                             />
                             <C.CopyIcon className="ph ph-x-circle"></C.CopyIcon>
                         </C.InputWrapper>
-                        <C.Button onClick={(e) => handleSubmit(e)}>Transcrever</C.Button>
+                        <C.Button onClick={(e: any) => handleSubmit(e)}>Transcrever</C.Button>
                     </C.FormContainer>
                 </C.FlexContainer>
             </C.GridContainer>
