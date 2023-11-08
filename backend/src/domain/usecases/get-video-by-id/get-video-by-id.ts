@@ -2,7 +2,7 @@ import { IGetVideoById } from ".";
 import { Either, left } from "../../../shared/either";
 import { InvalidIdError } from "../../entities/validations/erros/invalid-id";
 import { View } from "../../entities/video/getVideo";
-import { VideoRepository } from "../../repositories/in-memory/VideoRepository";
+import { VideoRepository } from "../../repositories/mongodb/VideoRepository";
 import { IdError } from "../errors/id-error";
 import { GetVideoByIdResponse } from "./get-video-by-id-response";
 

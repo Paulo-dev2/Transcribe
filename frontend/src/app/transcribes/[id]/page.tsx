@@ -2,10 +2,11 @@
 
 import { useVideo } from "@/hooks/get-video-by-id";
 import { useEffect } from "react";
-import { useSearchParams, usePathname } from 'next/navigation'
+import { usePathname } from 'next/navigation'
 import * as C from "@/styles";
 import { View } from "@/components/View";
 import { downloadTranscription } from "@/functions/main";
+import { AlertType } from "@/components/Alert";
 
 export default function DetailTranscribe(){
     const {isLoading,transcript,success,error,getVideoById} = useVideo();
@@ -15,8 +16,6 @@ export default function DetailTranscribe(){
             const id: any = pathname.split('/')[2];
             try {
                 await getVideoById(id);
-                if(success)
-                    alert("Sucesso")
             } catch (error) {
                 console.log(error)
             }
@@ -26,11 +25,19 @@ export default function DetailTranscribe(){
 
     return (
         <C.Loading $loading={isLoading} data-message="Carregando">
+            {success && (
+                <AlertType severity="success" title="Sucesso" message="Carregado com sucesso" />
+           )}
+
+           {success ? (
             <View
                 success={success}
                 transcription={transcript}
                 downloadTranscription={downloadTranscription}
             />
+           ): (
+            <p>Carregando</p>
+           )}
         </C.Loading>
     )
 }

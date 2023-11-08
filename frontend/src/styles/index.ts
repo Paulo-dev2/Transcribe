@@ -140,10 +140,11 @@ export const Input = styled.input`
   font-size: 1rem;
 `;
 
-export const Button = styled.button`
+export const Button = styled.button<any>`
+  cursor: pointer;
   all: unset;
   border-radius: 0.5rem;
-  background: var(--brand-primary, #9705EA);
+  background: ${props => props.salvar ? "green" : "var(--brand-primary, #9705EA)"} ;
   box-shadow: 0px 0px 16px 0px rgba(151, 5, 234, 0.50);
   min-width: 7rem;
   padding: 1.25rem 1.5rem;
@@ -155,7 +156,7 @@ export const Button = styled.button`
 
   &:hover {
     border-radius: 0.5rem;
-    background: var(--brand-primary, #9705EA);
+    background: ${props => props.salvar ? "green" : "var(--brand-primary, #9705EA)"};
     box-shadow: 0px 0px 32px 0px #9705EA;
   }
 `;

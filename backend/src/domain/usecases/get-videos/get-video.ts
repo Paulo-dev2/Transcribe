@@ -1,5 +1,5 @@
 import { IGetVideos } from ".";
-import { VideoRepository } from "../../repositories/in-memory/VideoRepository";
+import { VideoRepository } from "../../repositories/mongodb/VideoRepository";
 import { GetVideosResponse } from "./get-videos-response";
 
 export class GetVideos implements IGetVideos{
