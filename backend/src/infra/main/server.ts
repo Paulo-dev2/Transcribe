@@ -1,5 +1,15 @@
+import { MongoHelper } from "../../domain/repositories/mongodb/helpers/mongo-helper";
 import app from "./config/app";
 import "dotenv/config";
 
-console.log(process.env.PORT)
-app.listen(process.env.PORT);
+const url: any = process.env.DB_URI
+try {
+    MongoHelper.connect(url)
+        .then( async () => {
+            console.log("conectado")
+            app.listen(process.env.PORT);
+        })
+        .catch(console.error)
+} catch (error) {
+    console.log(error)
+}
