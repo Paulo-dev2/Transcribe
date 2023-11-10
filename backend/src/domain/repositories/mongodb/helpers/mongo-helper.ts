@@ -12,13 +12,13 @@ export const MongoHelper = {
   },
   getCollection (name: string): Collection {
     if (this.client) {
-      return this.client.db('teste').collection(name)
+      return this.client.db(process.env.DB).collection(name)
     }
     throw new Error('MongoClient is not connected')
   },
   async clearCollection (name: string): Promise<void> {
     if (this.client) {
-      await this.client.db('teste').collection(name).deleteMany({})
+      await this.client.db(process.env.DB).collection(name).deleteMany({})
     } else {
       throw new Error('MongoClient is not connected')
     }
