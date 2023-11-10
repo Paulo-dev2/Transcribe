@@ -19,11 +19,20 @@ export const Thumbnail = styled.img`
   grid-area: thumbnail;
   width: 15vw;
   height: 15vh;
-  margin-bottom: 16px;
+  margin: auto; /* Isso centraliza a imagem horizontalmente */
+  display: block; /* Para centralizar a imagem verticalmente */
 `;
 
 export const InfoContainer = styled.div`
   grid-area: info;
+  display: flex;
+  flex-direction: column; /* Exibe os elementos em coluna */
+  align-items: center;
+`;
+
+export const Title = styled.p`
+  font-weight: bold;
+  margin-bottom: 8px; /* Adicione um espaçamento inferior */
 `;
 
 export const URL = styled.p`

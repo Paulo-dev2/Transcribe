@@ -1,7 +1,7 @@
 import { useState, useCallback } from 'react';
 import { api } from '@/service/api';
 
-export const useVideo = () => {
+export const useVideoGetAll = () => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [transcript, setTranscript] = useState<Array<object>>([]);
   const [success, setSuccess] = useState<boolean>(false);

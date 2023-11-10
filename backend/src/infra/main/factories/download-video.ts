@@ -2,9 +2,9 @@ import { DownloadVideoController } from "../../../adapters/controllers/DownloadV
 import { VideoRepository } from "../../../domain/repositories/mongodb/VideoRepository";
 import { MongoHelper } from "../../../domain/repositories/mongodb/helpers/mongo-helper";
 import { DownloadVideo } from "../../../domain/usecases/download-video/download-video";
-import EventBus from "../../Events/EventBus";
-import { VideoDownloader } from "../../download/VideoDownloader";
-import { VideoTranscriber } from "../../transcribe/VideoTranscribe";
+import EventBus from "../../external/Events/EventBus";
+import { VideoDownloader } from "../../external/download/VideoDownloader";
+import { VideoTranscriber } from "../../external/transcribe/VideoTranscribe";
 
 export const makeDownloadVideoController = (): DownloadVideoController => {
     const mongoHelper = MongoHelper;

@@ -31,8 +31,7 @@ export class VideoTranscriber {
             const transcript = (result as PrerecordedTranscriptionResponse).toWebVTT();
             this.transcriptFormated = await this.transcriptFormatedData(transcript);
             fs.unlinkSync(videoFile)
-            //await fs.writeFileSync(`${videoFile}.txt`, transcript);
-            return this.transcriptFormated;
+            return {transcript:this.transcriptFormated, videoFile};
         } else {
             console.log("Resultado inválido.");
             return ""; // Ou outro tratamento de erro adequado.

@@ -6,7 +6,7 @@ import VLibras from "vlibras-nextjs";
 
 type Transcription = Record<string, string[]>;
 
-export const View = ({ handleChangeUrl, handleSubmit, success, transcription, downloadTranscription }: any) => {
+export const View = ({ handleChangeUrl, handleUpdate, success, transcription, downloadTranscription }: any) => {
   const [content, setContent] = useState<Transcription>();
 
     useEffect( () => {
@@ -75,10 +75,7 @@ export const View = ({ handleChangeUrl, handleSubmit, success, transcription, do
               </C.ContentContainer>
             </C.ContentWrapper>
           </C.FlexContainer>
-          <C.Button>
-            Legendar
-          </C.Button>
-          <C.Button salvar>
+          <C.Button salvar onClick={ () => handleUpdate(transcription._id, content)}>
             Salvar
           </C.Button>
         </C.WrapperContainer>

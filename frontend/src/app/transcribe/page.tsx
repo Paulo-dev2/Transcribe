@@ -1,16 +1,15 @@
 "use client";
 
-import { useVideo } from '@/hooks/download-video';
+import { useVideoDownload } from '@/hooks/download-video';
 import * as C from '@/styles/index';
-import { Main } from '@/components/Home';
+import { Main } from '@/components/Transcribe';
 import { useState } from 'react';
-import Progress from '@/components/Progress';
 import { downloadTranscription, urlIsValid } from '@/functions/main';
 import { AlertType } from '@/components/Alert';
 
 export default function Transcribe() {
 
-  const { isLoading, transcript, success, error, createVideo } = useVideo();
+  const { isLoading, transcript, success, error, createVideo } = useVideoDownload();
   const [url, setUrl] = useState<string>("");
   const [alert, setAlert] = useState({
     severity: "",
@@ -27,8 +26,6 @@ export default function Transcribe() {
         await createVideo({ url });
         if (success) 
           setAlert({severity: "success", title: "Transcrição", message: "Transcrição feita com sucesso"})
-        else
-        setAlert({severity: "error", title: "Error", message: "Aconteceu algum erro, tente novamente"})
       } else {
           setAlert({severity: "warning", title: "Atenção", message: "Url inválida"})
       }
@@ -39,17 +36,17 @@ export default function Transcribe() {
   }
 
   return (
-    <C.Loading $loading={isLoading} data-message={Progress()}>
+    <C.Loading $loading={isLoading} data-message={"Baixando e Transcrevendo"}>
       {alert.message.length > 1 && (
         <AlertType severity={alert.severity} title={alert.title} message={alert.message} />
       )}
-      <Main
-        handleChangeUrl={handleChangeUrl}
-        handleSubmit={handleSubmit}
-        success={success}
-        transcription={transcript}
-        url={url}
-        downloadTranscription={downloadTranscription} />
+        <Main
+          handleChangeUrl={handleChangeUrl}
+          handleSubmit={handleSubmit}
+          success={success}
+          transcription={transcript}
+          url={url}
+          downloadTranscription={downloadTranscription} />
     </C.Loading>
   )
 }

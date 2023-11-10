@@ -1,7 +1,7 @@
 "use client"
 
 import * as C from '@/styles/index';
-import { useVideo } from "@/hooks/get-videos";
+import { useVideoGetAll } from "@/hooks/get-videos";
 import { useVideoDelete } from "@/hooks/delete-video-by-id";
 import { useEffect } from "react";
 import { Card } from '@/components/Card';
@@ -9,7 +9,7 @@ import { Card } from '@/components/Card';
 import { useRouter } from 'next/navigation';
 import { AlertType } from '@/components/Alert';
 export default function Transcribes() {
-    const {isLoading,transcript,success,getVideos} = useVideo();
+    const {isLoading,transcript,success,getVideos} = useVideoGetAll();
     const {isDeleting, deletado, deleteVideoById} = useVideoDelete();
     const router = useRouter(); 
     useEffect(() => {
@@ -37,7 +37,7 @@ export default function Transcribes() {
     }
 
     return(
-        <C.Loading  $loading={isLoading} data-message="Selecionando videos">
+        <C.Loading  $loading={isLoading || isDeleting} data-message="Carregando">
            {success && (
                 <AlertType severity="success" title="Sucesso" message="Carregados com sucesso" />
            )}
@@ -47,6 +47,7 @@ export default function Transcribes() {
                         <>
                             {transcript.map( (data: any, index: number) => (
                                 <Card 
+                                    title={data.title}
                                     key={data._id}
                                     id={data._id}
                                     url={data.url}

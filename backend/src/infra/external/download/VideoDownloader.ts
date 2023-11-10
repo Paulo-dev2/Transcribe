@@ -6,7 +6,7 @@ const path = require('path');
 export class VideoDownloader {
     private YD: typeof YoutubeMp3Downloader;
     private ffStatic: any = ffmpegStatic;
-    private downloadPath = path.resolve(__dirname, '..','..','shared','uploads');
+    private downloadPath = path.resolve(__dirname, '..','..','..','shared','uploads');
     private eventBus: EventBus;
 
     constructor(eventBus: EventBus) {
@@ -35,7 +35,7 @@ export class VideoDownloader {
                 if (err) {
                     reject(err);
                 } else {
-                    resolve(video.file);
+                    resolve(video);
                 }
             });
         });

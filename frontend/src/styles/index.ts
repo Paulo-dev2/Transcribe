@@ -56,6 +56,9 @@ export const GridContainer = styled.div`
 
 export const FlexContainer = styled.div`
   display: flex;
+  flex-wrap: wrap; /* Permite que os itens quebrem para a próxima linha */
+  justify-content: space-between; /* Distribui os itens uniformemente nas linhas */
+  align-content: flex-start; /* Alinha as linhas no topo */
 `;
 
 export const LogoContainer = styled.div`

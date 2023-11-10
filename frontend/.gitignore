@@ -5,3 +5,4 @@
 .env
 .next
 backup.txt
+/src/functions/eventBus.ts

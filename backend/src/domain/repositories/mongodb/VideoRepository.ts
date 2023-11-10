@@ -6,7 +6,7 @@ export class VideoRepository {
 
   constructor(private readonly db = MongoHelper) {}
 
-  public async create(video: any, transcript: any) {
+  public async create(video: any, transcript: any, videoFile: any, videoOBJ: any) {
     const url: string = video.url;
 
     const videoData: VideoData = {
@@ -14,7 +14,9 @@ export class VideoRepository {
       transcript,
       createdAt: new Date(),
       updateAt: new Date(),
-      videoUrl: ''
+      videoUrl: videoFile,
+      title: videoOBJ.title,
+      artist: videoOBJ.artist 
     };
 
     try {
@@ -45,6 +47,39 @@ export class VideoRepository {
     const id = new ObjectId(video.id);
     await this.db.getCollection('transcribes').deleteMany({_id:id})
     return true
+  }
+
+  public async updateById(video: any, videoData: any): Promise<boolean>{
+    const id = new ObjectId(video.id);
+    const transcript = videoData.transcript;
+    const updateAt = new Date();
+    const result = await this.db.getCollection('transcribes').updateOne(
+      {_id: id},
+      {
+        $set:{
+          transcript: transcript,
+          updateAt: updateAt,
+        }
+      }
+    )
+
+    return result.matchedCount > 0
+  }
+
+  public async updateByIdFile(video: any, videoFile: any): Promise<boolean>{
+    const id = new ObjectId(video.id);
+    const updateAt = new Date();
+    const result = await this.db.getCollection('transcribes').updateOne(
+      {_id: id},
+      {
+        $set:{
+          videoUrl: videoFile,
+          updateAt: updateAt,
+        }
+      }
+    )
+
+    return result.matchedCount > 0
   }
   
 }

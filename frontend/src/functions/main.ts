@@ -1,9 +1,19 @@
 export const generateTextFile = (transcription: any) => {
-    const text = Object.keys(transcription)
-        .map(time => `${time}\n${transcription[time]}`)
-        .join('\n\n')
+    let srt = '';
+    let index = 1;
+        for (const timeRange in transcription) {
+            if (transcription.hasOwnProperty(timeRange)) {
+                const text = transcription[timeRange];
 
-    return new Blob([text], { type: 'text/plain' })
+                srt += index + '\n';
+                srt += timeRange.replace(/\./g, ',') + '\n'; // Substituir ponto por vírgula no tempo
+                srt += text + '\n\n';
+
+                index++;
+            }
+        }
+
+    return new Blob([srt], { type: 'text/plain' })
 }
 
 export const downloadTranscription = (transcription: any) => {
@@ -12,7 +22,7 @@ export const downloadTranscription = (transcription: any) => {
     const a = document.createElement('a');
     a.style.display = 'none';
     a.href = url;
-    a.download = 'transcription.txt';
+    a.download = 'transcription.srt';
     document.body.appendChild(a);
     a.click();
     window.URL.revokeObjectURL(url);

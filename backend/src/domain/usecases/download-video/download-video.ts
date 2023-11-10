@@ -1,9 +1,9 @@
 import { IDownloadVideo } from ".";
 import { InvalidUrlError } from "../../../domain/entities/validations/erros/invalid-url";
 import { Register } from "../../../domain/entities/video/downloadVideo";
-import { VideoDownloader } from "../../../infra/download/VideoDownloader";
+import { VideoDownloader } from "../../../infra/external/download/VideoDownloader";
 import { VideoRepository } from "../../repositories/mongodb/VideoRepository";
-import { VideoTranscriber } from "../../../infra/transcribe/VideoTranscribe";
+import { VideoTranscriber } from "../../../infra/external/transcribe/VideoTranscribe";
 import { Either, left } from "../../../shared/either";
 import { DownloadVideoResponse } from "./download-video-response";
 
@@ -30,10 +30,10 @@ export class DownloadVideo implements IDownloadVideo{
 
         if(existsUrl) return existsUrl
         
-        const videoFileName = await this.downloaderVideo.download(video)
-        const transcript: any = await this.transcribeVideo.transcribe(videoFileName);
+        const videoObj: any = await this.downloaderVideo.download(video)
+        const {transcript, videoFile}: any = await this.transcribeVideo.transcribe(videoObj.file);
 
-        const response: any = await this.videoRepository.create(video, transcript);
+        const response: any = await this.videoRepository.create(video, transcript, videoFile, videoObj);
 
         return response;
     }
