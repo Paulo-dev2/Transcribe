@@ -11,7 +11,7 @@ export class VideoDownloader {
 
     constructor(eventBus: EventBus) {
         this.YD = new YoutubeMp3Downloader({
-            ffmpegPath: this.ffStatic,
+            ffmpegPath: this.ffStatic.path,
             outputPath: this.downloadPath,
             queueParallelism: 2,
             youtubeVideoQuality: 'highestaudio'

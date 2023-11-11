@@ -20,7 +20,12 @@ class YoutubeMp3Downloader extends EventEmitter {
     this.outputOptions = (options && options.outputOptions ? options.outputOptions : []);
     this.allowWebm = (options && options.allowWebm ? options.allowWebm : false);
 
-    ffmpeg.setFfmpegPath(ffmpegPath);
+    if (options && options.ffmpegPath) {
+      ffmpeg.setFfmpegPath(options.ffmpegPath);
+    }else{
+      ffmpeg.setFfmpegPath(ffmpegPath);
+    }
+
 
     this.setupQueue();
   }
