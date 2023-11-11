@@ -1,4 +1,4 @@
-const YoutubeMp3Downloader = require('../youtube-mp3-downloader');
+const YoutubeMp3Downloader = require('../lib/download-mp3');
 import ffmpegStatic from 'ffmpeg-static';
 import EventBus from '../Events/EventBus';
 const path = require('path');
