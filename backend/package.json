@@ -10,7 +10,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "tsnd --respawn --ignore-watch node_modules src/infra/main/server.ts",
     "start": "node dist/infra/main/server.js",
-    "build": "tsc --build"
+    "build": "tsc --build && cp -r src/shared/uploads dist/shared"
   },
   "repository": {
     "type": "git",
