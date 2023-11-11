@@ -22,6 +22,9 @@ class YoutubeMp3Downloader extends EventEmitter {
 
     if (options && options.ffmpegPath) {
       ffmpeg.setFfmpegPath(options.ffmpegPath);
+    } else {
+      const ffmpegPath = require('ffmpeg-static');
+      ffmpeg.setFfmpegPath(ffmpegPath);
     }
 
     this.setupQueue();
