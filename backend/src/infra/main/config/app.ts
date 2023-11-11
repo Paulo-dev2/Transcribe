@@ -3,8 +3,6 @@ import express from 'express';
 import path from 'path';
 import { bodyParser, cors, contentType } from '../middleware/index';
 import { routeUser } from '../routes/user';
-import { MongoHelper } from "../../../domain/repositories/mongodb/helpers/mongo-helper";
-const WebSocket = require('ws');
 
 export class App{
     public server;
@@ -23,11 +21,6 @@ export class App{
     private routes() {
         this.server.use(routeUser);
         this.server.use("/video",express.static(path.resolve(__dirname,"..","..","shared","uploads")));
-    }
-
-    private socket(server: any){
-        const wss = new WebSocket.Server({ server });
-        wss.on('connection', (ws: any) => console.log('Cliente conectado ao servidor WebSocket.', ws))
     }
 }
 export default new App().server;
