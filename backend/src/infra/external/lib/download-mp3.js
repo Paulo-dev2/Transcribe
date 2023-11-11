@@ -1,4 +1,3 @@
-'use strict';
 const os = require('os');
 const EventEmitter = require('events').EventEmitter;
 const ffmpeg = require('fluent-ffmpeg');
@@ -6,6 +5,7 @@ const ytdl = require('ytdl-core');
 const async = require('async');
 const progress = require('progress-stream');
 const sanitize = require('sanitize-filename');
+const ffmpegPath = require('@ffmpeg-installer/ffmpeg').path;
 
 class YoutubeMp3Downloader extends EventEmitter {
 
@@ -20,12 +20,7 @@ class YoutubeMp3Downloader extends EventEmitter {
     this.outputOptions = (options && options.outputOptions ? options.outputOptions : []);
     this.allowWebm = (options && options.allowWebm ? options.allowWebm : false);
 
-    if (options && options.ffmpegPath) {
-      ffmpeg.setFfmpegPath(options.ffmpegPath);
-    } else {
-      const ffmpegPath = require('ffmpeg-static');
-      ffmpeg.setFfmpegPath(ffmpegPath);
-    }
+    ffmpeg.setFfmpegPath(ffmpegPath);
 
     this.setupQueue();
   }
