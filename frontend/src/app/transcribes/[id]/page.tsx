@@ -32,8 +32,7 @@ export default function DetailTranscribe(){
     const handleUpdate = async (id: string, transcript: object) => {
         try {
             await updateVideo(id, transcript);
-            if(upgraded)
-                setAlert("success", "Atualizado com sucesso")
+            setAlert("success", "Atualizado com sucesso")
         } catch (error) {
             console.log(error)
         }
