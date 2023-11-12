@@ -49,6 +49,7 @@ export default function Transcribes() {
                             {transcript.map((data: any, index: number) => (
                                 <Card
                                     title={data.title}
+                                    key={data._id}
                                     id={data._id}
                                     url={data.url}
                                     onViewClick={onViewClick}
