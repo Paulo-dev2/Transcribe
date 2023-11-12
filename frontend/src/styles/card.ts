@@ -46,8 +46,8 @@ export const ButtonContainer = styled.div`
   margin-top: 16px;
 `;
 
-export const Button = styled.button`
-  background-color: #007bff;
+export const Button = styled.button<any>`
+  background: ${props => props.deletar ? "red" : "#007bff"} ;
   color: white;
   border: none;
   padding: 8px 16px;

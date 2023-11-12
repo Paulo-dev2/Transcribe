@@ -5,17 +5,12 @@ import * as C from '@/styles/index';
 import { Main } from '@/components/Transcribe';
 import { useState } from 'react';
 import { downloadTranscription, urlIsValid } from '@/functions/main';
-import { AlertType } from '@/components/Alert';
+import { useAlert } from '@/hooks/alert';
 
 export default function Transcribe() {
-
   const { isLoading, transcript, success, error, createVideo } = useVideoDownload();
+  const {setAlert} = useAlert();
   const [url, setUrl] = useState<string>("");
-  const [alert, setAlert] = useState({
-    severity: "",
-    title: "",
-    message: ""
-  });
 
   const handleChangeUrl = ({ value }: any) => setUrl(value);
 
@@ -25,21 +20,18 @@ export default function Transcribe() {
       if (urlIsValid(url)) {
         await createVideo({ url });
         if (success) 
-          setAlert({severity: "success", title: "Transcrição", message: "Transcrição feita com sucesso"})
+          setAlert("success", "Transcrição feita com sucesso")
       } else {
-          setAlert({severity: "warning", title: "Atenção", message: "Url inválida"})
+          setAlert( "warning", "Url inválida")
       }
     } catch (error) {
-      setAlert({severity: "error", title: "Error", message: "Aconteceu algum erro, tente novamente"})
+      setAlert( "error", "Aconteceu algum erro, tente novamente")
     }
 
   }
 
   return (
     <C.Loading $loading={isLoading} data-message={"Baixando e Transcrevendo"}>
-      {alert.message.length > 1 && (
-        <AlertType severity={alert.severity} title={alert.title} message={alert.message} />
-      )}
         <Main
           handleChangeUrl={handleChangeUrl}
           handleSubmit={handleSubmit}

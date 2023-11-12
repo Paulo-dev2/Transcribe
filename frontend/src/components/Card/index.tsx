@@ -2,7 +2,7 @@
 
 import * as C from "@/styles/card"
 
-export const Card = ({ id, key, url, onViewClick, onDeleteClick, title }: any) => {
+export const Card = ({ id, url, onViewClick, onDeleteClick, title }: any) => {
 
     const getYouTubeThumbnail = (videoUrl: string, size='default')=> {
         const videoId = videoUrl.split('v=')[1];
@@ -17,7 +17,7 @@ export const Card = ({ id, key, url, onViewClick, onDeleteClick, title }: any) =
     }
 
     return(
-        <C.CardContainer key={key}>
+        <C.CardContainer key={id}>
             <C.Thumbnail src={getYouTubeThumbnail(url)}/>
             
             <C.InfoContainer>
@@ -25,7 +25,7 @@ export const Card = ({ id, key, url, onViewClick, onDeleteClick, title }: any) =
                 <C.URL>{url}</C.URL>
             </C.InfoContainer>
             <C.ButtonContainer>
-                <C.Button onClick={() => onDeleteClick(id)}>Deletar</C.Button>
+                <C.Button deletar onClick={() => onDeleteClick(id)}>Deletar</C.Button>
                 <C.Button onClick={() => onViewClick(id)}>Visualizar</C.Button>
             </C.ButtonContainer>
         </C.CardContainer>

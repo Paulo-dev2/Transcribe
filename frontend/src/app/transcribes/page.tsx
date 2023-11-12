@@ -3,52 +3,52 @@
 import * as C from '@/styles/index';
 import { useVideoGetAll } from "@/hooks/get-videos";
 import { useVideoDelete } from "@/hooks/delete-video-by-id";
-import { useEffect } from "react";
+import { useCallback, useEffect } from "react";
 import { Card } from '@/components/Card';
 
 import { useRouter } from 'next/navigation';
-import { AlertType } from '@/components/Alert';
+import { useAlert } from '@/hooks/alert';
+
 export default function Transcribes() {
-    const {isLoading,transcript,success,getVideos} = useVideoGetAll();
-    const {isDeleting, deletado, deleteVideoById} = useVideoDelete();
-    const router = useRouter(); 
+    const { setAlert } = useAlert();
+    const { isLoading, transcript, success, getVideos } = useVideoGetAll();
+    const { isDeleting, deletado, deleteVideoById } = useVideoDelete();
+    const router = useRouter();
     useEffect(() => {
         const getData = async () => {
             try {
                 await getVideos();
+                if (success)
+                    setAlert("success", "Transcrições carregadas com sucesso")
             } catch (error) {
                 console.log(error)
             }
         }
         getData()
-      }, [success]);
+    }, [success]);
 
-    const onViewClick = (id: string) => {
-        router.push(`/transcribes/${id}`)
-    }
+    const onViewClick = useCallback((id: string) => {
+        router.push(`/transcribes/${id}`);
+    }, [router]);
 
-    const onDeleteClick = async (id: string) => {
+    const onDeleteClick = useCallback(async (id: string) => {
         try {
-            await deleteVideoById({id});
-            if(deletado) location.reload()
+            await deleteVideoById({ id });
+            if (deletado) location.reload();
         } catch (error) {
-            console.log(error)
+            console.log(error);
         }
-    }
+    }, [deleteVideoById, deletado]);
 
-    return(
-        <C.Loading  $loading={isLoading || isDeleting} data-message="Carregando">
-           {success && (
-                <AlertType severity="success" title="Sucesso" message="Carregados com sucesso" />
-           )}
+    return (
+        <C.Loading $loading={isLoading || isDeleting} data-message="Carregando">
             <C.GridContainer>
                 <C.FlexContainer>
                     {success && (
                         <>
-                            {transcript.map( (data: any, index: number) => (
-                                <Card 
+                            {transcript.map((data: any, index: number) => (
+                                <Card
                                     title={data.title}
-                                    key={data._id}
                                     id={data._id}
                                     url={data.url}
                                     onViewClick={onViewClick}
