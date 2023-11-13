@@ -1,16 +1,19 @@
 import styled, {css} from 'styled-components';
 
 export const Menu = styled.ul`
-  position: fixed;
+  position: sticky;
+  z-index: 100;
   top: 0;
+  display: flex;
   padding: calc(4.5rem + 5vh) 5rem 0;
-  width: 90%;
+  width: 100%;
   list-style-type: none;
-  margin: 0;
-  padding: 1rem;
+  margin: 0 0 1rem 0;
+  padding: .5rem;
   overflow: hidden;
   background-color: rgba(14, 10, 10, 1);
   align-items: center;
+  justify-content: space-between;
 `;
 
 export const Item = styled.li`
@@ -33,10 +36,10 @@ export const ItemLink = styled.a`
 `;
 
 export const AppContainer = styled.div`
-  margin-top: 4.5rem;
-  padding: calc(4.5rem + 5vh) 5rem 0;
+  // margin-top: 4.5rem;
+  // padding: calc(4.5rem + 5vh) 5rem 0;
   width: 100%;
-  height: 100vh;
+  height: auto;
   flex-direction: column;
 `;
 
@@ -118,8 +121,8 @@ export const CopyIcon = styled.i`
 `;
 
 export const FormContainer = styled.form`
-  margin: 3rem auto 0;
-  width: 40rem;
+  // margin: 3rem auto 0;
+  width: 100%;
   gap: 1rem;
   display: flex; // Adicione display flex para alinhar elementos em uma linha
   justify-content: center; // Centralize os elementos horizontalmente

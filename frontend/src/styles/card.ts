@@ -2,8 +2,10 @@ import styled from 'styled-components';
 
 export const CardContainer = styled.div`
   border: 1px solid #ccc;
+  width: 100%;
+  max-width: calc((100% / 3) - 2rem );
+  height: 20rem;
   padding: 16px;
-  margin: 16px;
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: auto 1fr auto;
@@ -17,8 +19,8 @@ export const CardContainer = styled.div`
 
 export const Thumbnail = styled.img`
   grid-area: thumbnail;
-  width: 15vw;
-  height: 15vh;
+  width: auto;
+  height: 8rem;
   margin: auto; /* Isso centraliza a imagem horizontalmente */
   display: block; /* Para centralizar a imagem verticalmente */
 `;

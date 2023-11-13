@@ -24,6 +24,13 @@
   -webkit-text-size-adjust: 100%;
 }
 
+.appBody{
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  position: relative;
+}
+
 body {
   margin: 0;
   display: flex;

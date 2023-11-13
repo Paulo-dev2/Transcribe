@@ -1,7 +1,7 @@
 import { useState, useCallback } from "react";
 import { api } from "@/service/api";
 
-export const useVideoGetAll = () => {
+export const useVideoGetLastVideos = () => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [transcript, setTranscript] = useState<Array<object>>([]);
   const [success, setSuccess] = useState<boolean>(false);
@@ -12,7 +12,7 @@ export const useVideoGetAll = () => {
     setError(null);
 
     try {
-      const { data } = await api.get('/video/get-videos');
+      const { data } = await api.get('/video/get-last-videos');
       if (data.length > 0) {
         setSuccess(true);
         setTranscript(data);
