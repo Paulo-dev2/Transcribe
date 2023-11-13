@@ -1,6 +1,7 @@
 import { VideoData } from '../../entities/video/VideoData';
 import { MongoHelper } from './helpers/mongo-helper';
 import { ObjectId } from 'mongodb';
+import "dotenv/config";
 
 // Repositorio de dados, onde têm opções como create, findById, findByUrl, entre outros.
 
@@ -75,11 +76,12 @@ export class VideoRepository {
   public async updateByIdFile(video: any, videoFile: any): Promise<boolean>{
     const id = new ObjectId(video.id);
     const updateAt = new Date();
+    const url: any = `${process.env.HOST_VIDEO}/${videoFile}`
     const result = await this.db.getCollection('transcribes').updateOne(
       {_id: id},
       {
         $set:{
-          videoUrl: videoFile,
+          videoUrl: url,
           updateAt: updateAt,
         }
       }

@@ -12,7 +12,8 @@ export class VideoDownloadeMp4 {
     async download(url: string, id: string): Promise<{ filePath: string, fileName: string }> {
         const video = ytdl(url);
         let starttime: any;
-        const output: any = path.join(this.downloadPath, `${id}.mp4`);
+        const file = `${id}.mp4`
+        const output: any = path.join(this.downloadPath, file);
 
         return new Promise<{ filePath: string, fileName: string }>((resolve, reject) => {
             video.pipe(fs.createWriteStream(output));
@@ -32,7 +33,7 @@ export class VideoDownloadeMp4 {
             });
             video.on('end', () => {
                 process.stdout.write('\n\n');
-                resolve({ filePath: output, fileName: id });
+                resolve({ filePath: output, fileName: file });
             });
             video.on('error', (err: any) => {
                 reject(err);

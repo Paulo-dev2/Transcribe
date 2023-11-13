@@ -20,7 +20,7 @@ export class App{
 
     private routes() {
         this.server.use(routeUser);
-        this.server.use("/video",express.static(path.resolve(__dirname,"..","..","shared","uploads")));
+        this.server.use("/video",express.static(path.resolve(__dirname,"..","..","..","shared","uploads")));
     }
 }
 export default new App().server;

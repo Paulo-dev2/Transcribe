@@ -3,7 +3,8 @@ import { api } from '@/service/api';
 
 export const useVideoGet = () => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
-  const [transcript, setTranscript] = useState<object>({});
+  const [video, setVideo] = useState();
+  const [transcript, setTranscript] = useState<any>();
   const [success, setSuccess] = useState<boolean>(false);
   const [error, setError] = useState<String | null>(null);
 
@@ -14,8 +15,10 @@ export const useVideoGet = () => {
     try {
       const { data } = await api.get('/video/get-video/' + id);
       if (data) {
+        const transcribe: any = data.transcript
+        setVideo(data);
+        setTranscript(transcribe);
         setSuccess(true);
-        setTranscript(data);
       }
     } catch (err) {
       console.error(err);
@@ -30,6 +33,7 @@ export const useVideoGet = () => {
     transcript,
     success,
     error,
+    video,
     getVideoById,
   };
 }

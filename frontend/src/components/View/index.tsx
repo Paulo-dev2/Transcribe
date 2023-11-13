@@ -6,11 +6,11 @@ import VLibras from "vlibras-nextjs";
 
 type Transcription = Record<string, string[]>;
 
-export const View = ({ handleChangeUrl, handleUpdate, success, transcription, downloadTranscription }: any) => {
+export const View = ({ handleSubtitle,video ,handleUpdate, success, transcription, downloadTranscription }: any) => {
   const [content, setContent] = useState<Transcription>();
 
     useEffect( () => {
-        setContent({...transcription.transcript})
+        setContent({...transcription})
     }, [success])
 
   const handleInputChange = (event: React.ChangeEvent<HTMLSpanElement>, time: string, index: number) => {
@@ -33,7 +33,7 @@ export const View = ({ handleChangeUrl, handleUpdate, success, transcription, do
               <iframe
                 width="560"
                 height="315"
-                src={transcription.url.replace("watch?v=", "embed/")}
+                src={video.url.replace("watch?v=", "embed/")}
                 title="YouTube Video"
                 frameBorder="0"
                 allowFullScreen
@@ -53,11 +53,11 @@ export const View = ({ handleChangeUrl, handleUpdate, success, transcription, do
                 <C.ChunkContainer className="chunk flex">
                   {success && (
                      <>
-                     {Object.keys(transcription.transcript).map((time) => (
+                     {Object.keys(transcription).map((time) => (
                      <div key={time}>
                          <C.TimeContainer className="flex">{time}</C.TimeContainer>
                          <C.TextContainer>
-                         {[(transcription.transcript[time])].map((text: string, index: number) => (
+                         {[(transcription[time])].map((text: string, index: number) => (
                              <span
                              key={index}
                              contentEditable={true}
@@ -75,7 +75,10 @@ export const View = ({ handleChangeUrl, handleUpdate, success, transcription, do
               </C.ContentContainer>
             </C.ContentWrapper>
           </C.FlexContainer>
-          <C.Button salvar onClick={ () => handleUpdate(transcription._id, content)}>
+          <C.Button  onClick={ () => handleSubtitle(video._id, video.videoUrl)}>
+            Legendar
+          </C.Button>
+          <C.Button salvar onClick={ () => handleUpdate(video._id, content)}>
             Salvar
           </C.Button>
         </C.WrapperContainer>

@@ -10,7 +10,7 @@ export class SubtitlesVideoByIdController{
 
     async handle(httpRequest: HttpRequest): Promise<HttpResponse>{
         const receivedFields: Array<String> = Object.keys(httpRequest.body);
-        const requiredFields: Array<String> = ['id','transcript','videoUrl', 'videoFile'];
+        const requiredFields: Array<String> = ['id','videoUrl'];
         const missingFields = requiredFields.filter(field => !receivedFields.includes(field));
         if(missingFields.length > 0 ) return badRequest( new ShorterLengthError(requiredFields.length));
 

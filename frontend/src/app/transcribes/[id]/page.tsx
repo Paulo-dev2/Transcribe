@@ -8,11 +8,15 @@ import { View } from "@/components/View";
 import { downloadTranscription } from "@/functions/main";
 import { useVideoUpdate } from "@/hooks/update-video-by-id";
 import { useAlert } from '@/hooks/alert';
+import { useVideoSubtitle } from "@/hooks/subtitles-video-by-id";
+import { useRouter } from "next/navigation";
 
 export default function DetailTranscribe(){
     const {setAlert} = useAlert();
-    const {isLoading,transcript,success,getVideoById} = useVideoGet();
-    const { isUpdating,upgraded,error,updateVideo,} = useVideoUpdate();
+    const router = useRouter()
+    const {isLoading,transcript, video,success,getVideoById} = useVideoGet();
+    const { isUpdating,upgraded,error,updateVideo} = useVideoUpdate();
+    const { isSubtitling,isSubtitled,subtitleError,subtitleVideo,} = useVideoSubtitle()
     const pathname = usePathname();
 
     useEffect(() => {
@@ -38,17 +42,27 @@ export default function DetailTranscribe(){
         }
     }
 
+    const handleSubtitle = async (id: string, videoUrl: string) => {
+        try {
+            await subtitleVideo(id, videoUrl);
+            router.push(`/subtitles/${id}`)
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
+
     return (
-        <C.Loading $loading={isLoading || isUpdating} data-message="Carregando">
-           {success ? (
+        <C.Loading $loading={isLoading || isUpdating || isSubtitling} data-message="Carregando">
+           {success && (
             <View
                 success={success}
                 transcription={transcript}
+                video={video}
                 downloadTranscription={downloadTranscription}
                 handleUpdate={handleUpdate}
+                handleSubtitle={handleSubtitle}
             />
-           ): (
-            <p>Carregando</p>
            )}
         </C.Loading>
     )

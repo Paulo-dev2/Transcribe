@@ -6,7 +6,27 @@
    - Lucca de Carvalho
    - Paulo Abdiel
 
-  A busca de acessibilidade na internet não é somente uma prática recomendada para websites, app e etc. Afinal a internet é para todos e existe uma quantidade enorme de usuários que podem ter diferentes necessidades e deficiências. Portanto, a acessibilidade na web é uma responsabilidade essencial para garantir que todos, independentemente de suas limitações, possam acessar e utilizar os recursos online. E existe alguns aspectos que os desenvolvedores precisa adaptar, como: marcação semântica, texto alternativo, contraste de cores, navegabilidade, legendas e audidescrição e muitos outros. Pois de acordo com o site do Governo Federal, existem 18,9 milhões de pessoas com deficiência na data 15/09/2023.
+  A busca pela acessibilidade na internet transcende a mera recomendação, é uma 
+obrigação moral e legal, dada a diversidade de usuários com necessidades variadas e 
+deficiências. A internet é uma ferramenta global, e garantir que todos possam acessar e 
+utilizar seus recursos é essencial. Para alcançar a inclusão, os desenvolvedores devem 
+abordar vários aspectos, incluindo marcação semântica para uma estrutura clara, fornecer 
+texto alternativo para imagens, garantir contraste adequado de cores, melhorar a 
+navegabilidade, oferecer legendas e audiodescrição em conteúdo multimídia, entre outras 
+práticas.
+
+De acordo com o site do Governo Federal, em 15 de setembro de 2023, estima-se 
+que haja cerca de 18,9 milhões de pessoas com deficiências no Brasil. Portanto, é 
+imperativo atender às necessidades desse público.
+
+Para tornar a internet mais inclusiva para pessoas com deficiência auditiva, 
+desenvolvemos o "YoutubeTranscrição". Essa inovadora ferramenta permite a transcrição 
+de vídeos diretamente a partir de URLs do YouTube, transformando o áudio em legendas 
+no formato SRT (SubRip Text). Além disso, a integração com a vLibras possibilita a 
+tradução do conteúdo falado em português para a Língua Brasileira de Sinais (Libras), 
+garantindo que pessoas com deficiências auditivas tenham acesso pleno ao conteúdo 
+online. Esse projeto é um passo significativo em direção a uma internet verdadeiramente 
+inclusiva e acessível para todos.
 
   # Definições
 
@@ -45,6 +65,12 @@
  - Tornar a internet mais acessível é uma responsabilidade que deve ser compartilhada por todos. Os desenvolvedores de sites, criadores de conteúdo e empresas precisam adotar medidas que garantam que todos, independentemente de suas capacidades, possam desfrutar plenamente do conteúdo online. A integração de legendas e ferramentas como o vLibras é um passo crucial na direção certa.
 
  - Em resumo, a acessibilidade na internet é uma questão de igualdade e inclusão. Ao criar sites de transcrição de vídeo que incorporam legendas e o vLibras, estamos promovendo uma internet mais acolhedora, onde todos podem acessar informações e participar da comunicação online. É um passo fundamental para um mundo virtual mais inclusivo e diversificado.
+
+# Conclusão
+ - Em resumo, a acessibilidade na internet é uma questão de igualdade e inclusão. Ao 
+criar o YoutubeTranscrição incorporam legendas, estamos promovendo uma internet mais 
+acolhedora, onde todos podem acessar informações e participar da comunicação online. É 
+um passo fundamental para um mundo virtual mais inclusivo e diversificado.
 
 # Referências
 

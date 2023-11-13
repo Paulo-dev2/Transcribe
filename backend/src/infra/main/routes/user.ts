@@ -6,6 +6,7 @@ import { makeViewVideoByIdController } from "../factories/get-video-by-id";
 import { makeDeleteVideoByIdController } from "../factories/delete-video-by-id";
 import { makeUpdateVideoByIdController } from "../factories/update-video-by-id";
 import { makeSubtitlesVideoController } from "../factories/subtitles-video";
+import { makeViewDownloadsLastVideosController } from "../factories/get-last-videos";
 const routeUser = Router();
 
 routeUser.post("/video/create-video",
@@ -21,7 +22,7 @@ routeUser.get("/video/get-video/:id",
 );
 
 routeUser.get("/video/get-last-video",
-    adaptRoute.create(makeViewVideoByIdController())
+    adaptRoute.create(makeViewDownloadsLastVideosController())
 );
 
 routeUser.post("/video/delete-video",

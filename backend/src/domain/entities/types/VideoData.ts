@@ -5,7 +5,5 @@ export type VideoDataUpdate = {
 
 export type VideoDataSubtitles = {
     id: string,
-    transcript: Record<string, string>,
-    videoUrl: string,
-    videoFile: string
+    videoUrl: string
 }

@@ -1,6 +1,5 @@
 const YoutubeMp3Downloader = require('../lib/download-mp3');
 import ffmpegStatic from 'ffmpeg-static';
-import EventBus from '../Events/EventBus';
 const path = require('path');
 
 // Esta classe é responsável pelo o download de um vídeo do youtube em mp3.
@@ -9,16 +8,14 @@ export class VideoDownloader {
     private YD: typeof YoutubeMp3Downloader;
     private ffStatic: any = ffmpegStatic;
     private downloadPath = path.resolve(__dirname, '..','..','..','shared','uploads');
-    private eventBus: EventBus;
 
-    constructor(eventBus: EventBus) {
+    constructor() {
         this.YD = new YoutubeMp3Downloader({
             ffmpegPath: this.ffStatic.path,
             outputPath: this.downloadPath,
             queueParallelism: 2,
             youtubeVideoQuality: 'highestaudio'
         });
-        this.eventBus = eventBus;
     }
 
     download(video: any): Promise<string> {
@@ -31,7 +28,6 @@ export class VideoDownloader {
 
                 console.log( progress + '% downloaded')
 
-                this.eventBus.emitProgress(progress)
             });
             this.YD.on('finished', (err: Error, video: any) => {
                 if (err) {
