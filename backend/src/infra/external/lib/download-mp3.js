@@ -7,6 +7,9 @@ const progress = require('progress-stream');
 const sanitize = require('sanitize-filename');
 const ffmpegPath = require('@ffmpeg-installer/ffmpeg').path;
 
+// Esta é uma biblioteca que eu baixei, pois estava dando erro nas versões, pois estava desatualizada.
+// Este código é uma lib que é importada por outra classe para baixar os vídeos em mp3.
+
 class YoutubeMp3Downloader extends EventEmitter {
 
   constructor(options) {
