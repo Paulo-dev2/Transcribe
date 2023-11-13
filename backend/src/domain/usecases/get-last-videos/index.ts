@@ -1,5 +1,5 @@
-import { GetVideosResponse } from "./get-videos-response";
+import { GetLastVideosResponse } from "./get-videos-response";
 
-export interface IGetVideos{
-    getVideos: () => Promise<GetVideosResponse>
+export interface IGetLastVideos{
+    getLastVideos: () => Promise<GetLastVideosResponse>
 }

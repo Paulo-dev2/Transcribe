@@ -20,6 +20,10 @@ routeUser.get("/video/get-video/:id",
     adaptRoute.create(makeViewVideoByIdController())
 );
 
+routeUser.get("/video/get-last-video",
+    adaptRoute.create(makeViewVideoByIdController())
+);
+
 routeUser.post("/video/delete-video",
     adaptRoute.create(makeDeleteVideoByIdController())
 );
