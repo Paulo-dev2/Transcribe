@@ -1,9 +1,9 @@
 ﻿# AtividadeTranscribe
 # Grupo:
-   - André
-   - Andrei
-   - Artur
-   - Lucca
+   - André Soares
+   - Andrei Magalhães
+   - Artur Dantas
+   - Lucca de Carvalho
    - Paulo Abdiel
 
   A busca de acessibilidade na internet não é somente uma prática recomendada para websites, app e etc. Afinal a internet é para todos e existe uma quantidade enorme de usuários que podem ter diferentes necessidades e deficiências. Portanto, a acessibilidade na web é uma responsabilidade essencial para garantir que todos, independentemente de suas limitações, possam acessar e utilizar os recursos online. E existe alguns aspectos que os desenvolvedores precisa adaptar, como: marcação semântica, texto alternativo, contraste de cores, navegabilidade, legendas e audidescrição e muitos outros. Pois de acordo com o site do Governo Federal, existem 18,9 milhões de pessoas com deficiência na data 15/09/2023.
