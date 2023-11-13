@@ -3,6 +3,8 @@ import ffmpegStatic from 'ffmpeg-static';
 import EventBus from '../Events/EventBus';
 const path = require('path');
 
+// Esta classe é responsável pelo o download de um vídeo do youtube em mp3.
+
 export class VideoDownloader {
     private YD: typeof YoutubeMp3Downloader;
     private ffStatic: any = ffmpegStatic;
