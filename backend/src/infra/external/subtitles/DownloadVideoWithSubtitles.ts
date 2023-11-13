@@ -1,6 +1,8 @@
 const ffmpeg = require('fluent-ffmpeg');
 const path = require('path');
 
+// Ela é uma classe para legendar um vídeo, mas por algum motivo não mostra erro e não está legendado ele.
+
 export class DownloadVideoWithSubtitles {
   private downloadPath = path.resolve(__dirname, '..', '..', '..', 'shared', 'uploads');
 
