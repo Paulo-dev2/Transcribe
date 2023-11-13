@@ -1,8 +1,8 @@
-import { IGetVideos } from ".";
+import { IGetLastVideos } from ".";
 import { VideoRepository } from "../../repositories/mongodb/VideoRepository";
-import { GetVideosResponse } from "./get-videos-response";
+import { GetLastVideosResponse } from "./get-videos-response";
 
-export class GetVideos implements IGetVideos{
+export class GetLastVideos implements IGetLastVideos{
     private readonly videoRepository: VideoRepository;
     constructor(
         videoRepo: VideoRepository,
@@ -10,7 +10,7 @@ export class GetVideos implements IGetVideos{
         this.videoRepository = videoRepo;
     }
 
-    async getVideos(): Promise<GetVideosResponse>{
+    async getLastVideos(): Promise<GetLastVideosResponse>{
 
         const response: any = await this.videoRepository.findLastThree();
 
