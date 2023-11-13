@@ -43,6 +43,10 @@ export class VideoRepository {
     return await this.db.getCollection('transcribes').find({}).toArray();
   }
 
+  public async findLastThree(): Promise<Array<VideoData>>{
+    return await this.db.getCollection('transcribes').find({}).sort({'createdAt': -1}).limit(3).toArray();
+  }
+
   public async deleteById(video: any): Promise<boolean> {
     const id = new ObjectId(video.id);
     await this.db.getCollection('transcribes').deleteMany({_id:id})
