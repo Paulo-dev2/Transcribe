@@ -2,6 +2,8 @@ import { VideoData } from '../../entities/video/VideoData';
 import { MongoHelper } from './helpers/mongo-helper';
 import { ObjectId } from 'mongodb';
 
+// Repositorio de dados, onde têm opções como create, findById, findByUrl, entre outros.
+
 export class VideoRepository {
 
   constructor(private readonly db = MongoHelper) {}
