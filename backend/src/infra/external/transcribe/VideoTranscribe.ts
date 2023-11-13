@@ -2,6 +2,8 @@ import { Deepgram } from '@deepgram/sdk';
 import { PrerecordedTranscriptionResponse } from '@deepgram/sdk/dist/types';
 import fs from 'fs';
 
+// Esta classe é reponsavel para transcrever o vídeo e depois formatar ele no formato SRT.
+
 export class VideoTranscriber {
     private deepgram: Deepgram;
     private key: string | any = process.env.DEEPGRAM;
