@@ -3,6 +3,9 @@ import path from 'path';
 import fs from 'fs';
 import ytdl from 'ytdl-core';
 
+// Esta classe baixa o vídeo em mp4, para que depois legendasse ele, 
+// mas não estamos usando ele porque não está dando certo a parte para legendar
+
 export class VideoDownloadeMp4 {
     private downloadPath = path.resolve(__dirname, '..', '..', '..', 'shared', 'uploads');
 
