@@ -75,7 +75,7 @@ export const View = ({ handleSubtitle,video ,handleUpdate, success, transcriptio
               </C.ContentContainer>
             </C.ContentWrapper>
           </C.FlexContainer>
-          <C.Button  onClick={ () => handleSubtitle(video._id, video.videoUrl)}>
+          <C.Button  onClick={ () => handleSubtitle(video._id, video.url)}>
             Legendar
           </C.Button>
           <C.Button salvar onClick={ () => handleUpdate(video._id, content)}>
