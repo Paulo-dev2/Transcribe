@@ -1,7 +1,7 @@
 import readline from 'readline';
 import path from 'path';
 import fs from 'fs';
-const ytdl = require('../lib/ytdl-core');
+const ytdl = require('../lib/ytdl-core/lib');
 
 // Importando as bibliotecas necessárias
 
