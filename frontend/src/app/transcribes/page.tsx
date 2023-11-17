@@ -27,7 +27,7 @@ export default function Transcribes() {
   }, [success]);
 
   const onViewClick = useCallback(
-    (id: string) => {
+    async (id: string) => {
       router.push(`/transcribes/${id}`);
     },
     [router]

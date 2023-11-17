@@ -1,8 +1,6 @@
 "use client";
 
 import * as C from "@/styles/index";
-import { useEffect } from "react";
-import { useAlert } from "@/hooks/alert";
 import { useVideoGetLastVideos } from "@/hooks/getLastVideos";
 import youtube from "@/assets/images/youtube.png";
 import wait from "@/assets/images/wait.png";
@@ -10,7 +8,7 @@ import ready from "@/assets/images/ready.png";
 import transcrever from "@/assets/images/transcrever.png";
 import Image from "next/image";
 
-export default function Home() {
+export default async function Home() {
 
   return (
     <C.AppContainer>

@@ -1,3 +1,5 @@
+import { FaPlay } from 'react-icons/fa';
+import { IoPlayBack, IoPlayForwardSharp } from 'react-icons/io5';
 import styled from 'styled-components';
 
 interface StyledProps {
@@ -69,7 +71,7 @@ export const DivStylesLeftPanel = styled.div<StyledProps>`
 
 export const DivSubtitlesPanel = styled.div`
   border-radius: 4px;
-  height: 822px;
+  height: auto;
   overflow: hidden;
   width: 539px;
 `;
@@ -79,7 +81,6 @@ export const FlexDiv = styled.div`
   flex-direction: column;
 `;
 
-// ... (definição de estilos para outros componentes)
 
 export const Div = styled(FlexDiv)`
   display: flex;
@@ -198,14 +199,12 @@ export const ProjectNameWrapper = styled.div`
   height: 20px;
   left: 10px;
   position: relative;
-  top: 8px;
   width: 30vw;
 `;
 
-export const ProjectName = styled.input`
+export const ProjectName = styled.span`
   background: transparent;
   border: none;
-  color: #111837;
   font-family: 'Inter', Helvetica;
   font-size: 15px;
   font-weight: 400;
@@ -218,4 +217,31 @@ export const ProjectName = styled.input`
   top: -1px;
   white-space: nowrap;
   width: 96px;
+`;
+
+export const StyledFaPlay = styled(FaPlay)`
+  font-size: 24px; /* Ajuste o tamanho conforme necessário */
+  margin-right: 10px; /* Espaçamento entre os ícones */
+  margin-left: 10px; /* Espaçamento entre os ícones */
+  cursor: pointer;
+`;
+
+export const StyledIoPlayForwardSharp = styled(IoPlayForwardSharp)`
+  font-size: 24px; /* Ajuste o tamanho conforme necessário */
+  margin-left: 10px; /* Espaçamento entre os ícones */
+  cursor: pointer;
+`;
+
+export const StyledIoPlayBack = styled(IoPlayBack)`
+  font-size: 24px; /* Ajuste o tamanho conforme necessário */
+  margin-right: 10px; /* Espaçamento entre os ícones */
+  cursor: pointer;
+`;
+
+export const StyledControlsContainer = styled.div`
+padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%; /* Garante que o contêiner ocupe a altura do pai */
 `;

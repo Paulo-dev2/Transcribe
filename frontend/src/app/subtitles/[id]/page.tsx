@@ -2,7 +2,7 @@
 
 import * as C from '@/styles/index';
 import { useVideoGet } from '@/hooks/get-video-by-id';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { usePathname } from 'next/navigation'
 import { useAlert } from '@/hooks/alert';
 import { Subtitles } from '@/components/Subtitles';

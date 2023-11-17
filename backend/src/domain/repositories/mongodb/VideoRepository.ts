@@ -1,6 +1,7 @@
 import { VideoData } from '../../entities/video/VideoData';
 import { MongoHelper } from './helpers/mongo-helper';
 import { ObjectId } from 'mongodb';
+import fs from 'fs';
 import "dotenv/config";
 
 // Importando módulos e bibliotecas necessárias
@@ -26,7 +27,9 @@ export class VideoRepository {
       updateAt: new Date(),
       videoUrl: videoFile,
       title: videoOBJ.title,
-      artist: videoOBJ.artist 
+      artist: videoOBJ.artist,
+      videoFile: '',
+      isSubtitled: false
     };
     // Cria um objeto VideoData com os dados do vídeo.
 
@@ -73,11 +76,29 @@ export class VideoRepository {
     // Retorna uma matriz dos três registros de vídeo mais recentes no banco de dados, ordenados por data de criação.
   }
 
+  public async findByIdForSubtitles(video: any): Promise<VideoData | null> {
+    const id = new ObjectId(video.id);
+    const subtitledVideo = await this.db.getCollection('transcribes').findOne({_id: id, isSubtitled: true});
+    return subtitledVideo || null; // Retorna false se o vídeo não foi encontrado ou não é subtitled
+  }
+
   public async deleteById(video: any): Promise<boolean> {
     // Método para excluir um registro de vídeo com base no ID.
 
     const id = new ObjectId(video.id);
     await this.db.getCollection('transcribes').deleteMany({_id:id});
+    // Exclui do banco de dados o registro de vídeo com o ID especificado.
+
+    return true;
+    // Retorna verdadeiro para indicar que a exclusão foi bem-sucedida.
+  }
+
+  public async deleteByIdForSubtitles(video: any): Promise<boolean> {
+    // Método para excluir um registro de vídeo com base no ID.
+
+    const id = new ObjectId(video.id);
+    await this.db.getCollection('transcribes').deleteMany({_id:id});
+    await fs.unlinkSync(video.videoFile);
     // Exclui do banco de dados o registro de vídeo com o ID especificado.
 
     return true;
@@ -105,17 +126,19 @@ export class VideoRepository {
     // Retorna verdadeiro se houve correspondência de registros para atualização.
   }
 
-  public async updateByIdFile(video: any, videoFile: any): Promise<boolean>{
+  public async updateByIdFile(video: any, videoUrl: any, videoFile: any): Promise<boolean>{
     // Método para atualizar o URL do vídeo de um registro com base no ID.
 
     const id = new ObjectId(video.id);
     const updateAt = new Date();
-    const url: any = `${process.env.HOST_VIDEO}/${videoFile}`;
+    const url: any = `${process.env.HOST_VIDEO}/${videoUrl}`;
     const result = await this.db.getCollection('transcribes').updateOne(
       {_id: id},
       {
         $set:{
           videoUrl: url,
+          isSubtitled: true,
+          videoFile: videoFile,
           updateAt: updateAt,
         }
       }
