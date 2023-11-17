@@ -37,7 +37,6 @@ ytdl.cache = {
   watch: getInfo.watchPageCache,
   cookie: getInfo.cookieCache,
 };
-ytdl.version = require('../package.json').version;
 
 
 const createStream = options => {
