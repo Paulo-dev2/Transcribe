@@ -38,6 +38,7 @@ export default function Transcribes() {
       try {
         await deleteVideoById({ id });
         if (deletado) location.reload();
+        else location.reload();
       } catch (error) {
         console.log(error);
       }
