@@ -6,7 +6,7 @@ const async = require('async');
 const progress = require('progress-stream');
 const sanitize = require('sanitize-filename');
 const ffmpegPath = require('@ffmpeg-installer/ffmpeg').path;
-
+const fs = require('fs');
 // Esta é uma biblioteca que eu baixei, pois estava dando erro nas versões, pois estava desatualizada.
 // Este código é uma lib que é importada por outra classe para baixar os vídeos em mp3.
 
@@ -65,106 +65,64 @@ class YoutubeMp3Downloader extends EventEmitter {
 
   async performDownload(task, callback) {
     let self = this;
-    let info;
-    const videoUrl = this.youtubeBaseUrl+task.videoId;
-    let resultObj = {
-      videoId: task.videoId
-    };
-
-    try {
-      info = await ytdl.getInfo(videoUrl, { quality: this.youtubeVideoQuality })
-    } catch (err){
-      return callback(err);
-    }
-
-    const videoTitle = sanitize(info.videoDetails.title);
-    let artist = 'Unknown';
-    let title = 'Unknown';
-    const thumbnail = info.videoDetails.thumbnails ?
-      info.videoDetails.thumbnails[0].url
-      : info.videoDetails.thumbnail || null;
-
-    if (videoTitle.indexOf('-') > -1) {
-      let temp = videoTitle.split('-');
-      if (temp.length >= 2) {
-        artist = temp[0].trim();
-        title = temp[1].trim();
-      }
-    } else {
-      title = videoTitle;
-    }
-
-    // Derive file name, if given, use it, if not, from video title
-    const fileName = (task.fileName ? self.outputPath + '/' + sanitize(task.fileName) : self.outputPath + '/' + (videoTitle || info.videoId) + '.mp3');
-
-    // Stream setup
-    const streamOptions =  {
-      quality: self.youtubeVideoQuality,
-      requestOptions: self.requestOptions
-    };
-
-    if (!self.allowWebm) {
-      streamOptions.filter = format => format.container === 'mp4';
-    }
-
-    const stream = ytdl.downloadFromInfo(info, streamOptions);
-
-    stream.on('error', function(err){
-      callback(err, null);
-    });
-
-    stream.on('response', function(httpResponse) {
-      // Setup of progress module
-      const str = progress({
-        length: parseInt(httpResponse.headers['content-length']),
-        time: self.progressTimeout
-      });
-
-      // Add progress event listener
-      str.on('progress', function(progress) {
-        if (progress.percentage === 100) {
-          resultObj.stats= {
-            transferredBytes: progress.transferred,
-            runtime: progress.runtime,
-            averageSpeed: parseFloat(progress.speed.toFixed(2))
-          }
-        }
-        self.emit('progress', {videoId: task.videoId, progress: progress})
-      });
-      let outputOptions = [
-        '-id3v2_version', '4',
-        '-metadata', 'title=' + title,
-        '-metadata', 'artist=' + artist
-      ];
-      if (self.outputOptions) {
-        outputOptions = outputOptions.concat(self.outputOptions);
-      }
-      
-      const audioBitrate = info.formats.find(format => !!format.audioBitrate).audioBitrate
-
-      // Start encoding
-      const proc = new ffmpeg({
-        source: stream.pipe(str)
-      })
-      .audioBitrate(audioBitrate || 192)
-      .withAudioCodec('libmp3lame')
-      .toFormat('mp3')
-      .outputOptions(...outputOptions)
-      .on('error', function(err) {
-        return callback(err.message, null);
-      })
-      .on('end', function() {
-        resultObj.file =  fileName;
-        resultObj.youtubeUrl = videoUrl;
-        resultObj.videoTitle = videoTitle;
-        resultObj.artist = artist;
-        resultObj.title = title;
-        resultObj.thumbnail = thumbnail;
-        return callback(null, resultObj);
-      })
-      .saveToFile(fileName);
-    });
+  let info;
+  const videoUrl = this.youtubeBaseUrl + task.videoId;
+  let resultObj = {
+    videoId: task.videoId
   };
+
+  try {
+    info = await ytdl.getInfo(videoUrl, { quality: this.youtubeVideoQuality })
+  } catch (err) {
+    return callback(err);
+  }
+
+  const videoTitle = sanitize(info.videoDetails.title);
+  let artist = 'Unknown';
+  let title = 'Unknown';
+  const thumbnail = info.videoDetails.thumbnails ?
+    info.videoDetails.thumbnails[0].url
+    : info.videoDetails.thumbnail || null;
+
+  if (videoTitle.indexOf('-') > -1) {
+    let temp = videoTitle.split('-');
+    if (temp.length >= 2) {
+      artist = temp[0].trim();
+      title = temp[1].trim();
+    }
+  } else {
+    title = videoTitle;
+  }
+
+  const audioStream = ytdl.downloadFromInfo(info, { quality: 'highestaudio' });
+  const outputFilePath = task.fileName ? `${self.outputPath}/${sanitize(task.fileName)}.mp3` : `${self.outputPath}/${videoTitle || info.videoId}.mp3`;
+
+  const fileWriteStream = fs.createWriteStream(outputFilePath);
+
+  fileWriteStream.on('error', function (err) {
+    callback(err, null);
+  });
+
+  fileWriteStream.on('finish', function () {
+    resultObj.file = outputFilePath;
+    resultObj.youtubeUrl = videoUrl;
+    resultObj.videoTitle = videoTitle;
+    resultObj.artist = artist;
+    resultObj.title = title;
+    resultObj.thumbnail = thumbnail;
+    return callback(null, resultObj);
+  });
+
+  const str = progress({
+    length: parseInt(info.videoDetails.lengthSeconds) * 1000000 // Length of the video in bytes
+  });
+
+  str.on('progress', function (progress) {
+    self.emit('progress', { videoId: task.videoId, progress: progress })
+  });
+
+  audioStream.pipe(str).pipe(fileWriteStream);
+  }
 }
 
 module.exports = YoutubeMp3Downloader;

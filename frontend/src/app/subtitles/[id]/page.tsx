@@ -28,7 +28,7 @@ export default function Transcribe() {
   }, [success])
 
   return (
-    <C.Loading $loading={isLoading} data-message={"Baixando e Transcrevendo"}>
+    <C.Loading $loading={isLoading} data-message={"Legedando"}>
         {success && (
          <Subtitles
          transcription={transcript}

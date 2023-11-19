@@ -27,8 +27,9 @@ export class VideoTranscriber {
     public async transcribe(videoFile: any) {
         // Método 'transcribe' que aceita um arquivo de vídeo como argumento.
 
+        const videoBuffer = fs.readFileSync(videoFile);
         const file = {
-            buffer: fs.readFileSync(videoFile),
+            buffer: videoBuffer,
             mimetype: 'audio/mp3',
         };
         // Lendo o conteúdo do arquivo de vídeo em formato mp3.
