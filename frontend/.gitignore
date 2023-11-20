@@ -2,7 +2,6 @@
 
 # dependencies
 /node_modules
-.env
 .next
 backup.txt
 /src/functions/eventBus.ts

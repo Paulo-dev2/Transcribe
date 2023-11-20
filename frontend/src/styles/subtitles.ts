@@ -23,15 +23,15 @@ export const IndexContainer = styled.div`
 `;
 
 export const ContainerWrapper = styled.div`
-  height: 920px;
+  height: 90vh;
   overflow: hidden;
-  width: 1830px;
+  width: 1000vw;
 `;
 
 export const Container = styled.div`
-  height: 931px;
+  height: 90vh;
   position: relative;
-  width: 1832px;
+  width: 100vw;
 `;
 
 export const OverlapWrapper = styled.div`
@@ -59,13 +59,13 @@ export const DivStylesLeftPanel = styled.div<StyledProps>`
   border-color: #dfe0e5;
   border-right-style: solid;
   border-right-width: 1px;
-  height: 822px;
+  height: 80vh;
   position: absolute;
   left: 5px;
-  width: 540px;
+  width: 29vw;
   border: 1px solid #ffffff;
   overflow-y: scroll; /* Adiciona uma barra de rolagem vertical conforme necessário */
-  overflow-x: none;
+  overflow-x: scroll;
 `;
 
 
@@ -73,14 +73,13 @@ export const DivSubtitlesPanel = styled.div`
   border-radius: 4px;
   height: auto;
   overflow: hidden;
-  width: 539px;
+  width: 29vw;
 `;
 
 export const FlexDiv = styled.div`
   display: flex;
   flex-direction: column;
 `;
-
 
 export const Div = styled(FlexDiv)`
   display: flex;
@@ -129,13 +128,12 @@ export const TextWrapper = styled.div`
   top: -50px
 `;
 
-
 export const DivEditStyled = styled.div`
   height: 769px;
-  left: 560px;
+  left: 30vw;
   position: absolute;
   top: 10px;
-  width: 1300px;
+  width: 70vw;
 `;
 
 export const DivPreview = styled.div`
@@ -143,18 +141,18 @@ export const DivPreview = styled.div`
   left: 0px;
   position: absolute;
   top: 64px;
-  width: 1300px;
+  width: 70vw;
 `;
 
 export const VideoContainer = styled.div`
   width: 100%;
-  max-width: 1280px;
+  max-width: 70vw;
 `;
 
 export const VideoWrapper = styled.div`
   position: relative;
   width: 100%;
-  max-width: 1280px;
+  max-width: 70vw;
 `;
 
 export const Video = styled.video`
@@ -177,7 +175,7 @@ export const DivHeaderControls = styled.div`
   left: 0;
   position: absolute;
   top: 0;
-  width: 1300px;
+  width: 70vw;
 `;
 
 export const InputWrapper = styled.div`
@@ -239,7 +237,7 @@ export const StyledIoPlayBack = styled(IoPlayBack)`
 `;
 
 export const StyledControlsContainer = styled.div`
-padding: 10px;
+  padding: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
