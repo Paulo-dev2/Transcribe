@@ -1,5 +1,7 @@
 ﻿## Getting Started
 
+O arquivo .env, é para ser usado somente para meios acadêmicos
+
 Primeiro baixa as depedências:
 
 ``` bash
@@ -10,6 +12,7 @@ Primeiro baixa as depedências:
 - DEEPGRAM=key, primeiro tem criar uma conta https://deepgram.com/ e criar a key ai é so adicionar.
 - DB_URI, a uri do monogdb
 - DB, é a variavel do nome do banco
+- HOST_VIDEO, é a variavel do caminho do vídeo
 
 Depois só roda o sequinte comando:
 ```bash

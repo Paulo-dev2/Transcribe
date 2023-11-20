@@ -1,5 +1,7 @@
 ## Getting Started
 
+O arquivo .env, é para ser usado somente para meios acadêmicos
+
 Primeiro baixa as depedências:
 
 ``` bash
