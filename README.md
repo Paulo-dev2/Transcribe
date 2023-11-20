@@ -6,6 +6,8 @@
    - Lucca de Carvalho
    - Paulo Abdiel
 
+  Use como exemplo de vídeo para transcrever, para testes: https://www.youtube.com/watch?v=_jnMR2-zKoc
+
   A busca pela acessibilidade na internet transcende a mera recomendação, é uma 
 obrigação moral e legal, dada a diversidade de usuários com necessidades variadas e 
 deficiências. A internet é uma ferramenta global, e garantir que todos possam acessar e 
