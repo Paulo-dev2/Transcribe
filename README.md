@@ -5,6 +5,10 @@
    - Artur Dantas
    - Lucca de Carvalho
    - Paulo Abdiel
+# Informações:
+   - Disciplina: Computabilidade e Complexidade de Algoritmos
+   - Curso: Ciência da Computação
+   - Instiuição: Centro Universitário do Distrito Federal UDF, Coordenação de Tecnologia da Informação, Brasília, DF
 
   Use como exemplo de vídeo para transcrever, para testes: https://www.youtube.com/watch?v=_jnMR2-zKoc
 
