@@ -1,5 +1,5 @@
 ﻿# AtividadeTranscribe
-# Grupo:
+# Equipe:
    - André Soares
    - Andrei Magalhães
    - Artur Dantas
@@ -8,39 +8,39 @@
 
   Use como exemplo de vídeo para transcrever, para testes: https://www.youtube.com/watch?v=_jnMR2-zKoc
 
-  A busca pela acessibilidade na internet transcende a mera recomendação, é uma 
-obrigação moral e legal, dada a diversidade de usuários com necessidades variadas e 
-deficiências. A internet é uma ferramenta global, e garantir que todos possam acessar e 
-utilizar seus recursos é essencial. Para alcançar a inclusão, os desenvolvedores devem 
-abordar vários aspectos, incluindo marcação semântica para uma estrutura clara, fornecer 
-texto alternativo para imagens, garantir contraste adequado de cores, melhorar a 
-navegabilidade, oferecer legendas e audiodescrição em conteúdo multimídia, entre outras 
-práticas.
+  A busca pela acessibilidade na internet transcende a mera recomendação, é uma obrigação moral e legal, dada a diversidade de usuários com necessidades variadas e deficiências. A internet é uma ferramenta global, e garantir que todos possam acessar e utilizar seus recursos é essencial. Para alcançar a inclusão, os desenvolvedores devem abordar vários aspectos, incluindo marcação semântica para uma estrutura clara, fornecer texto alternativo para imagens, garantir contraste adequado de cores, melhorar a navegabilidade, oferecer legendas e audiodescrição em conteúdo multimídia, entre outras práticas.
 
-De acordo com o site do Governo Federal, em 15 de setembro de 2023, estima-se 
-que haja cerca de 18,9 milhões de pessoas com deficiências no Brasil. Portanto, é 
-imperativo atender às necessidades desse público.
+  De acordo com o site do Governo Federal, em 15 de setembro de 2023, estima-se que haja cerca de 18,9 milhões de pessoas com deficiências no Brasil. Portanto, é imperativo atender às necessidades desse público.
 
-Para tornar a internet mais inclusiva para pessoas com deficiência auditiva, 
-desenvolvemos o "YoutubeTranscrição". Essa inovadora ferramenta permite a transcrição 
-de vídeos diretamente a partir de URLs do YouTube, transformando o áudio em legendas 
-no formato SRT (SubRip Text). Além disso, a integração com a vLibras possibilita a 
-tradução do conteúdo falado em português para a Língua Brasileira de Sinais (Libras), 
-garantindo que pessoas com deficiências auditivas tenham acesso pleno ao conteúdo 
-online. Esse projeto é um passo significativo em direção a uma internet verdadeiramente 
-inclusiva e acessível para todos.
+  Para tornar a internet mais inclusiva para pessoas com deficiência auditiva, desenvolvemos o "YoutubeTranscription". Essa inovadora ferramenta permite a transcrição de vídeos diretamente a partir de URLs do YouTube, transformando o áudio em legendas no formato SRT (SubRip Text). Além disso, a integração com a vLibras possibilita a tradução do conteúdo falado em português para a Língua Brasileira de Sinais (Libras), garantindo que pessoas com deficiências auditivas tenham acesso pleno ao conteúdo online. Esse projeto é um passo significativo em direção a uma internet verdadeiramente inclusiva e acessível para todos.
 
-  # Definições
 
- - Marcação semântica: Utilizar marcações HTML adequadas e semânticas para garantir que o conteúdo seja interpretado corretamente por leitores de tela e outros dispositivos de assistência.
+  # METODOLOGIA
 
- - Texto alternativo: Fornecer descrições adequadas para imagens e outros elementos visuais, permitindo que os usuários com deficiência visual entendam o conteúdo.
+ Na criação do YoutubeTranscription, nosso foco principal foi abordar algumas lacunas em termos de acessibilidade presentes em sites convencionais, transformando-as em recursos de fácil acesso para todos os usuários. Implementamos uma série de melhorias, incluindo:
 
- - Contraste de cores: Garantir que o texto e os elementos visuais tenham contraste suficiente para serem legíveis por pessoas com deficiências visuais.
+   - Marcação semântica: Empregamos marcações HTML adequadas e semânticas para garantir que o conteúdo seja interpretado corretamente por leitores de tela e outros dispositivos de assistência.
 
- - Navegabilidade: Tornar a navegação do site fácil e lógica, para que os usuários possam se deslocar efetivamente por meio de teclados, leitores de tela ou outros dispositivos.
+   - Texto alternativo: Disponibilizamos descrições apropriadas para imagens e elementos visuais, permitindo que usuários com deficiência visual compreendam o conteúdo.
 
- - Legendas e audiodescrição: Incluir legendas em vídeos e fornecer audiodescrição para tornar o conteúdo de mídia acessível a pessoas surdas ou com deficiência visual.
+   - Contraste de cores: Certificamo-nos de que o texto e elementos visuais apresentem contraste suficiente para garantir a legibilidade para pessoas com deficiência visual.
+
+   - Navegabilidade: Projetamos uma navegação no site que seja fácil e lógica, permitindo que os usuários se desloquem eficazmente usando teclados, leitores de tela e outros dispositivos.
+
+   - Legendas e audiodescrição: Incluímos legendas em vídeos e fornecemos audiodescrição para tornar o conteúdo de mídia acessível a pessoas surdas ou com deficiência visual.
+
+  Além disso, com a tecnologia do vLibras, um tradutor de língua portuguesa para a Língua Brasileira de Sinais (Libras), que trabalha automaticamente para converter legendas em português ou outros idiomas em Libras. Essa abordagem integrada visa tornar a internet mais acessível, especialmente para pessoas com deficiências auditivas e visuais, contribuindo para uma experiência online verdadeiramente inclusiva.
+
+  A complexidade do algoritmo vem da dificuldade de entender e transcrever um áudio em tempo polinomial pois mesmo com um som “cristalino” um modelo de idioma completo é necessário para lidar com diferenças minúsculas de um bom reconhecimento de fala, o que geralmente implica uma análise de contexto.
+
+  Embora as redes neurais possam produzir bons resultados, uma boa rede neural é quase sempre cuidadosamente planejada e otimizada para uma necessidade específica. Uma ampla experiência e compreensão de línguas e redes neurais é necessária para isso, além de treinamento intensivo. 
+
+  Para realizar a transcrição de vídeos no YoutubeTranscription, empregamos uma metodologia que envolve o uso de um modelo avançado de Inteligência Artificial (IA) desenvolvido pela DeepGreen. É essencial notar que, embora esse modelo de IA seja altamente sofisticado, ele não é infalível e, portanto, a precisão da transcrição pode variar em alguns casos. A IA faz o melhor esforço para converter o conteúdo de áudio em texto, mas a complexidade de alguns contextos de fala e sotaques pode afetar a precisão. Um grande desafio é "reverter uma engenharia" do conhecimento disponível sobre uma língua em um modelo, pois a maioria das línguas são evoluídas e não foram projetadas como modelos matemáticos.
+
+  Apesar dessas limitações, o YoutubeTranscription é um recurso valioso que contribui significativamente para tornar a internet mais acessível para pessoas com deficiências auditivas, proporcionando vídeos em legendas e, em seguida, traduzindo-as para a Língua Brasileira de Sinais (Libras) com a ajuda da vLibras. A utilização deste modelo de IA avançada é um passo importante na busca da inclusão digital, mas os usuários devem estar cientes de que a transcrição não é 100% precisa em todos os casos.
+
+  Por exemplo em alguns casos pode existir erros gramaticais, sêmaticos, ortográficos entre outros, por isso o YoutubeTranscription fornece recurso do usúario de poder editar a trânscrição do jeito que o usúario desejar, para que a partir disso possa ser baixado o arquivo em SRT, onde colocará a legenda no vídeo.
+
 
 # Tornando a Internet Mais Acessível: A Importância da Legenda e do vLibras
 
@@ -69,10 +69,14 @@ inclusiva e acessível para todos.
  - Em resumo, a acessibilidade na internet é uma questão de igualdade e inclusão. Ao criar sites de transcrição de vídeo que incorporam legendas e o vLibras, estamos promovendo uma internet mais acolhedora, onde todos podem acessar informações e participar da comunicação online. É um passo fundamental para um mundo virtual mais inclusivo e diversificado.
 
 # Conclusão
- - Em resumo, a acessibilidade na internet é uma questão de igualdade e inclusão. Ao 
-criar o YoutubeTranscrição incorporam legendas, estamos promovendo uma internet mais 
-acolhedora, onde todos podem acessar informações e participar da comunicação online. É 
-um passo fundamental para um mundo virtual mais inclusivo e diversificado.
+ As legendas, ou legendagem, são a resposta para esse problema. Elas são transcrições escritas do conteúdo de áudio e fornecem às pessoas com deficiência auditiva a oportunidade de acompanhar o conteúdo de vídeo. No entanto, a implementação de legendas é um passo essencial e frequentemente subestimado na criação de conteúdo na web.
+
+  Os sites de transcrição de vídeo do YouTube e plataformas semelhantes podem aproveitar o YoutubeTranscription para criar uma experiência mais inclusiva para seus usuários. Ao incorporar o vLibras, eles tornam possível a tradução automática do conteúdo para Libras. Isso permite que pessoas com deficiência auditiva tenham acesso igualitário a informações, educação, entretenimento e muito mais.
+
+  Em resumo, a acessibilidade na internet é uma questão de igualdade e inclusão. Ao criar o YoutubeTranscription incorporam legendas, estamos promovendo uma internet mais acolhedora, onde todos podem acessar informações e participar da comunicação online. É um passo fundamental para um mundo virtual mais inclusivo e diversificado.
+
+  Site: https://transcribe-frontend.vercel.app/
+
 
 # Referências
 
