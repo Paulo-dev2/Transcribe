@@ -1,4 +1,4 @@
-﻿# AtividadeTranscribe
+﻿# YoutubeTranscription
 # Equipe:
    - André Soares
    - Andrei Magalhães
@@ -12,6 +12,19 @@
 
   Use como exemplo de vídeo para transcrever, para testes: https://www.youtube.com/watch?v=_jnMR2-zKoc
 
+# Objetivo:
+  Com o propósito de fomentar a inclusão e a acessibilidade na internet, foi desenvolvida a ferramenta "YoutubeTranscription". Esta inovação tecnológica possibilita a transcrição de vídeos a partir de URLs do YouTube, convertendo-os para o formato SRT (SubRip Text). O formato SRT é amplamente reconhecido e utilizado para arquivos de legenda em vídeos, permitindo que o conteúdo audiovisual seja convertido em legendas precisas e sincronizadas.
+
+  Além disso, a integração da "YoutubeTranscription" com a vLibras, uma plataforma que viabiliza a tradução do conteúdo do português para a Língua Brasileira de Sinais (Libras), representa um avanço significativo. Essa sinergia tecnológica torna a web mais acessível e inclusiva para pessoas com deficiência auditiva, oferecendo não apenas legendas, mas também a possibilidade de tradução do conteúdo visual e sonoro para uma linguagem visual e gestual, como a Libras.
+
+  Essa ferramenta não só contribui para a acessibilidade de pessoas com deficiência auditiva, mas também enriquece a experiência de todos os usuários. A disponibilização de legendas pode ser útil em diversas situações, como ambientes barulhentos, aprendizado de idiomas e para melhor compreensão do conteúdo apresentado nos vídeos.
+
+  A "YoutubeTranscription" surge como uma solução tecnológica inovadora que não apenas satisfaz as exigências de acessibilidade, mas também promove a inclusão e a diversidade na esfera digital. Ao tornar os vídeos mais acessíveis e compreensíveis para uma ampla gama de usuários, estamos dando um passo importante em direção a uma internet mais igualitária e inclusiva para todos.
+
+  Com essa ferramenta, a internet se torna um espaço mais inclusivo, onde a diversidade de usuários é valorizada, garantindo que o acesso ao conteúdo online seja efetivo e enriquecedor para todos, independentemente de suas habilidades ou deficiências específicas.
+
+
+# Introdução:
   A busca pela acessibilidade na internet transcende a mera recomendação, é uma obrigação moral e legal, dada a diversidade de usuários com necessidades variadas e deficiências. A internet é uma ferramenta global, e garantir que todos possam acessar e utilizar seus recursos é essencial. Para alcançar a inclusão, os desenvolvedores devem abordar vários aspectos, incluindo marcação semântica para uma estrutura clara, fornecer texto alternativo para imagens, garantir contraste adequado de cores, melhorar a navegabilidade, oferecer legendas e audiodescrição em conteúdo multimídia, entre outras práticas.
 
   De acordo com o site do Governo Federal, em 15 de setembro de 2023, estima-se que haja cerca de 18,9 milhões de pessoas com deficiências no Brasil. Portanto, é imperativo atender às necessidades desse público.
