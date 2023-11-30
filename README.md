@@ -27,6 +27,8 @@
 # Introdução:
   A busca pela acessibilidade na internet transcende a mera recomendação, é uma obrigação moral e legal, dada a diversidade de usuários com necessidades variadas e deficiências. A internet é uma ferramenta global, e garantir que todos possam acessar e utilizar seus recursos é essencial. Para alcançar a inclusão, os desenvolvedores devem abordar vários aspectos, incluindo marcação semântica para uma estrutura clara, fornecer texto alternativo para imagens, garantir contraste adequado de cores, melhorar a navegabilidade, oferecer legendas e audiodescrição em conteúdo multimídia, entre outras práticas.
 
+  Durante a concepção e desenvolvimento do YoutubeTranscription, nos inspiramos em plataformas de acessibilidade líderes, como Veed.io, para abordar as lacunas presentes em termos de acessibilidade em websites convencionais. Nosso foco principal foi transformar essas lacunas em recursos acessíveis para todos os usuários, priorizando aspectos como marcação semântica, texto alternativo, contraste de cores, navegabilidade, legendas e audiodescrição.
+
   De acordo com o site do Governo Federal, em 15 de setembro de 2023, estima-se que haja cerca de 18,9 milhões de pessoas com deficiências no Brasil. Portanto, é imperativo atender às necessidades desse público.
 
   Para tornar a internet mais inclusiva para pessoas com deficiência auditiva, desenvolvemos o "YoutubeTranscription". Essa inovadora ferramenta permite a transcrição de vídeos diretamente a partir de URLs do YouTube, transformando o áudio em legendas no formato SRT (SubRip Text). Além disso, a integração com a vLibras possibilita a tradução do conteúdo falado em português para a Língua Brasileira de Sinais (Libras), garantindo que pessoas com deficiências auditivas tenham acesso pleno ao conteúdo online. Esse projeto é um passo significativo em direção a uma internet verdadeiramente inclusiva e acessível para todos.
@@ -34,7 +36,7 @@
 
   # METODOLOGIA
 
- Na criação do YoutubeTranscription, nosso foco principal foi abordar algumas lacunas em termos de acessibilidade presentes em sites convencionais, transformando-as em recursos de fácil acesso para todos os usuários. Implementamos uma série de melhorias, incluindo:
+ No desenvolvimento do YoutubeTranscription, nos baseamos na abordagem e nas práticas adotadas por plataformas de acessibilidade notáveis, incluindo o uso de tecnologias semelhantes e estratégias de design centradas na acessibilidade, conforme observado em sites como Veed.io. Implementamos melhorias significativas, como marcação semântica adequada, texto alternativo para imagens e elementos visuais, garantia de contraste de cores adequado, facilitação da navegabilidade, e inclusão de legendas e audiodescrição.
 
    - Marcação semântica: Empregamos marcações HTML adequadas e semânticas para garantir que o conteúdo seja interpretado corretamente por leitores de tela e outros dispositivos de assistência.
 
@@ -102,3 +104,5 @@
 - Patel, Neil. Acessibilidade na Web. Disponível em: https://neilpatel.com/br/blog/acessibilidade-na-web/. Acessado em: 31 out. 2023, às 18:31.
 
 - Governo Federal. Ministério da Mulher, da Família e dos Direitos Humanos. Pessoa com Deficiência - Estatísticas. Disponível em: https://www.gov.br/mdh/pt-br/navegue-por-temas/pessoa-com-deficiencia/estatisticas. Acessado em: 4 nov. 2023, às 15:22.
+
+- VEED. Recursos de acessibilidade da Veed.io. Disponível em: https://www.veed.io/. Acessado em: 27 nov. 2023, às 15:34.
