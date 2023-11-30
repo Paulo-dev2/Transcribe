@@ -9,6 +9,7 @@
    - Disciplina: Computabilidade e Complexidade de Algoritmos
    - Curso: Ciência da Computação
    - Instiuição: Centro Universitário do Distrito Federal UDF, Coordenação de Tecnologia da Informação, Brasília, DF
+   - Orientadora: Kadidja Valeria Reginaldo de Oliveira
 
   Use como exemplo de vídeo para transcrever, para testes: https://www.youtube.com/watch?v=_jnMR2-zKoc
 
